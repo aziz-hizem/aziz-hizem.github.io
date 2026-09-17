@@ -1,10 +1,15 @@
-export function Section({ id, eyebrow, title, intro, children }) {
+export function Section({ id, number, eyebrow, title, intro, children }) {
   return (
-    <section id={id} className="mx-auto w-full max-w-6xl px-5 py-20 sm:px-8">
-      <header className="mb-10 max-w-2xl">
-        {eyebrow && <p className="mb-2 font-mono text-xs uppercase tracking-[0.2em] text-accent">{eyebrow}</p>}
-        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
-        {intro && <p className="mt-3 text-muted">{intro}</p>}
+    <section id={id} className="mx-auto w-full max-w-6xl px-5 py-24 sm:px-8">
+      <header className="reveal mb-12 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="max-w-2xl">
+          <p className="mb-3 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-accent">
+            {number && <span className="text-dim">{number}</span>}
+            {eyebrow}
+          </p>
+          <h2 className="text-4xl font-bold sm:text-5xl">{title}</h2>
+          {intro && <p className="mt-4 text-lg text-muted">{intro}</p>}
+        </div>
       </header>
       {children}
     </section>
@@ -13,28 +18,29 @@ export function Section({ id, eyebrow, title, intro, children }) {
 
 export function Tag({ children }) {
   return (
-    <span className="rounded-md border border-line bg-surface-2 px-2 py-0.5 font-mono text-[11px] text-muted">
+    <span className="rounded-full border border-line bg-surface-2 px-2.5 py-0.5 font-mono text-[11px] text-muted">
       {children}
     </span>
   )
 }
 
-export function LinkButton({ href, children, primary = false }) {
-  const base = 'inline-flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-sm font-medium transition-colors'
+export function LinkButton({ href, children, primary = false, external = true }) {
+  const base =
+    'group inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300'
   const style = primary
-    ? 'bg-accent text-bg hover:bg-[#f0c661]'
-    : 'border border-line text-ink hover:border-muted hover:bg-surface-2'
+    ? 'bg-accent text-accent-ink hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(63,214,176,0.7)]'
+    : 'border border-line-2 text-ink hover:border-accent/60 hover:bg-surface-2'
   return (
-    <a href={href} target="_blank" rel="noreferrer" className={`${base} ${style}`}>
+    <a href={href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})} className={`${base} ${style}`}>
       {children}
-      <ArrowIcon />
+      <ArrowIcon className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
     </a>
   )
 }
 
-export function ArrowIcon() {
+export function ArrowIcon({ className = '' }) {
   return (
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" className={className}>
       <path d="M7 17 17 7M8 7h9v9" />
     </svg>
   )

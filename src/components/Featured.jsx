@@ -3,31 +3,39 @@ import { LinkButton, Section, Tag } from './ui'
 
 function ProjectCard({ project, index }) {
   const flip = index % 2 === 1
+  const num = String(index + 1).padStart(2, '0')
   return (
-    <article className="grid gap-6 rounded-2xl border border-line bg-surface p-4 sm:p-5 lg:grid-cols-5 lg:gap-8">
+    <article className="card reveal grid gap-6 rounded-3xl border border-line bg-surface p-4 sm:p-5 lg:grid-cols-5 lg:gap-8">
       <a
         href={project.links[0].href}
         target="_blank"
         rel="noreferrer"
-        className={`group relative overflow-hidden rounded-xl border border-line bg-bg lg:col-span-3 ${flip ? 'lg:order-2' : ''}`}
+        className={`group relative block overflow-hidden rounded-2xl border border-line bg-bg lg:col-span-3 ${flip ? 'lg:order-2' : ''}`}
       >
         <img
           src={project.image}
           alt={`${project.title} screenshot`}
           loading={index < 2 ? 'eager' : 'lazy'}
-          className="aspect-video w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+          className="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-bg/80 px-3 py-1 font-mono text-[11px] text-ink opacity-0 backdrop-blur transition-all duration-500 group-hover:opacity-100">
+          Open repository ↗
+        </span>
       </a>
 
       <div className="flex flex-col lg:col-span-2">
-        <p className="font-mono text-xs uppercase tracking-[0.18em] text-accent">{project.area}</p>
-        <h3 className="mt-2 text-2xl font-semibold tracking-tight">{project.title}</h3>
-        <p className="mt-2 text-ink/90">{project.tagline}</p>
-        <p className="mt-3 text-sm leading-relaxed text-muted">{project.description}</p>
+        <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+          <span className="text-dim">{num}</span>
+          {project.area}
+        </p>
+        <h3 className="mt-3 text-3xl font-bold">{project.title}</h3>
+        <p className="mt-3 text-lg leading-snug text-ink/90">{project.tagline}</p>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted">{project.description}</p>
 
-        <ul className="mt-4 space-y-1.5 text-sm text-muted">
+        <ul className="mt-4 space-y-2 text-sm text-muted">
           {project.highlights.map((h) => (
-            <li key={h} className="flex gap-2">
+            <li key={h} className="flex gap-2.5">
               <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
               <span>{h}</span>
             </li>
@@ -56,11 +64,12 @@ export default function Featured() {
   return (
     <Section
       id="projects"
+      number="01"
       eyebrow="Featured work"
       title="Projects"
       intro="From delivery pipelines to computer vision on real hardware. Each one is documented and runnable from its repository."
     >
-      <div className="space-y-6">
+      <div className="space-y-8">
         {featured.map((p, i) => (
           <ProjectCard key={p.id} project={p} index={i} />
         ))}

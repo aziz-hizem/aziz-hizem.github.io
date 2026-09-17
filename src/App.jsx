@@ -5,8 +5,10 @@ import Hero from './components/Hero'
 import More from './components/More'
 import Nav from './components/Nav'
 import Skills from './components/Skills'
+import { useReveal } from './hooks/useReveal'
 
 export default function App() {
+  useReveal()
   return (
     <>
       <Nav />
