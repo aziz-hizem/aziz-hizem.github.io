@@ -4,11 +4,11 @@ import { LinkButton, Section, Tag } from './ui'
 function List({ title, items, marker }) {
   return (
     <div>
-      <h4 className="font-mono text-xs uppercase tracking-[0.2em] text-muted">{title}</h4>
+      <h4 className="label text-muted">{title}</h4>
       <ul className="mt-4 space-y-2.5 text-sm">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
-            <span className="mt-0.5 shrink-0 font-mono text-xs text-accent">{marker}</span>
+            <span className="mt-0.5 shrink-0 text-xs font-semibold text-accent">{marker}</span>
             <span className="text-ink/90">{item}</span>
           </li>
         ))}
@@ -33,8 +33,10 @@ export default function Current() {
               <img src={p.image} alt={`${p.title} screenshot`} loading="lazy" className="aspect-video w-full object-cover" />
             </a>
             <div className="mt-4 flex items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-0.5 font-mono text-[11px] text-accent">
-                <span className="h-1.5 w-1.5 animate-pulse-dot rounded-full bg-accent" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" aria-hidden="true">
+                  <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                </svg>
                 {p.status}
               </span>
               <span className="text-xs text-muted">Actively developed</span>

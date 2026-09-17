@@ -31,7 +31,7 @@ export default function Nav() {
   return (
     <nav className="sticky top-0 z-30 border-b border-line/70 bg-bg/75 backdrop-blur-md">
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="font-mono text-sm font-medium">
+        <a href="#top" className="font-display text-base font-bold tracking-tight">
           <span className="text-accent">~</span>/aziz-hizem
         </a>
 

@@ -19,13 +19,13 @@ function ProjectCard({ project, index }) {
           className="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-        <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-bg/80 px-3 py-1 font-mono text-[11px] text-ink opacity-0 backdrop-blur transition-all duration-500 group-hover:opacity-100">
+        <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-bg/80 px-3 py-1 text-xs font-medium text-ink opacity-0 backdrop-blur transition-all duration-500 group-hover:opacity-100">
           Open repository ↗
         </span>
       </a>
 
       <div className="flex flex-col lg:col-span-2">
-        <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-accent">
+        <p className="label flex items-center gap-3 text-accent">
           <span className="text-dim">{num}</span>
           {project.area}
         </p>

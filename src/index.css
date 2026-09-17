@@ -3,7 +3,6 @@
 @theme {
   --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 
   --color-bg: #0a0b0e;
   --color-surface: #111318;
@@ -40,6 +39,15 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+/* Small uppercase labels (eyebrows, section numbers, group titles) */
+.label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 h1, h2, h3, .font-display {
@@ -88,6 +96,28 @@ section[id] {
   color: transparent;
 }
 
+/* Availability badge: a light that travels around the border */
+@property --sweep {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+.glow-border {
+  padding: 1px;
+  background: conic-gradient(
+    from var(--sweep),
+    var(--color-line) 0deg,
+    var(--color-line) 250deg,
+    var(--color-accent) 300deg,
+    var(--color-accent-2) 330deg,
+    var(--color-line) 360deg
+  );
+  animation: sweep 4s linear infinite;
+}
+@keyframes sweep {
+  to { --sweep: 360deg; }
+}
+
 /* Card hover glow */
 .card {
   position: relative;
@@ -102,5 +132,6 @@ section[id] {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .card, .card:hover { transform: none; }
+  .glow-border { background: var(--color-line-2); }
   * { animation: none !important; }
 }

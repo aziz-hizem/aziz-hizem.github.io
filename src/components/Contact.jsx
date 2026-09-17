@@ -15,7 +15,7 @@ export default function Contact() {
           style={{ background: 'radial-gradient(closest-side, rgba(110,168,255,0.5), rgba(63,214,176,0.3) 60%, transparent)' }}
         />
         <div className="relative">
-          <p className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.22em] text-accent">
+          <p className="label flex items-center gap-3 text-accent">
             <span className="text-dim">05</span> Contact
           </p>
           <h2 className="mt-3 text-4xl font-bold sm:text-6xl">
@@ -40,7 +40,7 @@ export default function Contact() {
       </div>
       <footer className="mt-10 flex flex-col items-start justify-between gap-2 text-xs text-dim sm:flex-row">
         <span>© {new Date().getFullYear()} {profile.name}</span>
-        <span className="font-mono">React · Vite · Tailwind CSS · GitHub Actions → GitHub Pages</span>
+        <span>React · Vite · Tailwind CSS · GitHub Actions → GitHub Pages</span>
       </footer>
     </section>
   )
