@@ -70,12 +70,24 @@ export default function Hero() {
             <p className="reveal mt-4 font-display text-xl font-medium text-muted sm:text-2xl" style={{ '--reveal-delay': '120ms' }}>
               {profile.role}
             </p>
+            {profile.roleNote && (
+              <p className="reveal mt-1.5 text-sm text-dim" style={{ '--reveal-delay': '150ms' }}>
+                {profile.roleNote}
+              </p>
+            )}
           </div>
         </div>
 
-        <p className="reveal mt-10 max-w-2xl text-xl leading-relaxed text-ink/90 sm:text-2xl" style={{ '--reveal-delay': '180ms' }}>
-          I build <span className="text-gradient font-semibold">delivery pipelines</span>,{' '}
-          <span className="text-gradient font-semibold">computer vision systems</span> and the software around them.
+        <p className="reveal mt-10 max-w-3xl text-xl leading-relaxed text-ink/90 sm:text-2xl" style={{ '--reveal-delay': '180ms' }}>
+          {profile.headline.map((part, i) =>
+            part.accent ? (
+              <span key={i} className="text-gradient font-semibold">
+                {part.text}
+              </span>
+            ) : (
+              <span key={i}>{part.text}</span>
+            ),
+          )}
         </p>
 
         <ul className="reveal mt-7 flex flex-wrap gap-2" style={{ '--reveal-delay': '240ms' }}>
