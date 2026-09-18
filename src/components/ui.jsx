@@ -1,3 +1,18 @@
+// Renders a string, turning [[anything in double brackets]] into gradient-highlighted words.
+// Works in the data files too, e.g. tagline: 'Counts pills and [[flags color anomalies]].'
+export function Accented({ text }) {
+  const parts = String(text).split(/\[\[([^\]]+)\]\]/g)
+  return parts.map((part, i) =>
+    i % 2 === 1 ? (
+      <span key={i} className="text-gradient font-semibold">
+        {part}
+      </span>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  )
+}
+
 export function Section({ id, number, eyebrow, title, intro, children }) {
   return (
     <section id={id} className="mx-auto w-full max-w-6xl px-5 py-24 sm:px-8">
@@ -7,8 +22,14 @@ export function Section({ id, number, eyebrow, title, intro, children }) {
             {number && <span className="text-dim">{number}</span>}
             {eyebrow}
           </p>
-          <h2 className="text-4xl font-bold sm:text-5xl">{title}</h2>
-          {intro && <p className="mt-4 text-lg text-muted">{intro}</p>}
+          <h2 className="text-4xl font-bold sm:text-5xl">
+            <Accented text={title} />
+          </h2>
+          {intro && (
+            <p className="mt-4 text-lg text-muted">
+              <Accented text={intro} />
+            </p>
+          )}
         </div>
       </header>
       {children}

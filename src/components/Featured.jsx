@@ -1,5 +1,5 @@
 import { featured } from '../data/projects'
-import { LinkButton, Section, Tag } from './ui'
+import { Accented, LinkButton, Section, Tag } from './ui'
 
 function ProjectCard({ project, index }) {
   const flip = index % 2 === 1
@@ -30,14 +30,20 @@ function ProjectCard({ project, index }) {
           {project.area}
         </p>
         <h3 className="mt-3 text-3xl font-bold">{project.title}</h3>
-        <p className="mt-3 text-lg leading-snug text-ink/90">{project.tagline}</p>
-        <p className="mt-3 text-[15px] leading-relaxed text-muted">{project.description}</p>
+        <p className="mt-3 text-lg leading-snug text-ink/90">
+          <Accented text={project.tagline} />
+        </p>
+        <p className="mt-3 text-[15px] leading-relaxed text-muted">
+          <Accented text={project.description} />
+        </p>
 
         <ul className="mt-4 space-y-2 text-sm text-muted">
           {project.highlights.map((h) => (
             <li key={h} className="flex gap-2.5">
               <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-              <span>{h}</span>
+              <span>
+                <Accented text={h} />
+              </span>
             </li>
           ))}
         </ul>

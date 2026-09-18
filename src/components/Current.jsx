@@ -1,5 +1,5 @@
 import { current } from '../data/projects'
-import { LinkButton, Section, Tag } from './ui'
+import { Accented, LinkButton, Section, Tag } from './ui'
 
 function List({ title, items, marker }) {
   return (
@@ -9,7 +9,9 @@ function List({ title, items, marker }) {
         {items.map((item) => (
           <li key={item} className="flex gap-3">
             <span className="mt-0.5 shrink-0 text-xs font-semibold text-accent">{marker}</span>
-            <span className="text-ink/90">{item}</span>
+            <span className="text-ink/90">
+              <Accented text={item} />
+            </span>
           </li>
         ))}
       </ul>
@@ -41,7 +43,9 @@ export default function Current() {
               </span>
               <span className="text-xs text-muted">Actively developed</span>
             </div>
-            <p className="mt-4 text-[15px] leading-relaxed text-muted">{p.description}</p>
+            <p className="mt-4 text-[15px] leading-relaxed text-muted">
+              <Accented text={p.description} />
+            </p>
             <div className="mt-4 flex flex-wrap gap-1.5">
               {p.stack.map((s) => (
                 <Tag key={s}>{s}</Tag>

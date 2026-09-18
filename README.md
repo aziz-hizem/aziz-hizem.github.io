@@ -73,6 +73,44 @@ headline: [
 ],
 ```
 
+### Highlight words with the gradient
+
+Wrap any words in **double square brackets** and they get the teal-to-blue gradient, like
+*curiosity* in the headline:
+
+```js
+tagline: 'Inspects blister packs: counts pills and [[flags color anomalies]].'
+```
+
+This works in the fields that are rendered through the `Accented` helper:
+
+| File | Fields |
+|---|---|
+| `profile.js` | `headline` (uses `accent: true` instead, see above) |
+| `projects.js` | `tagline`, `description`, `highlights`, `summary`, `works`, `roadmap` |
+| components | any `title` or `intro` passed to `<Section>` |
+
+To use it somewhere not in that list, import the helper and wrap the text:
+
+```jsx
+import { Accented } from './ui'
+
+<p><Accented text={someText} /></p>
+```
+
+Or, for text written directly in a component, use the class on its own:
+
+```jsx
+<span className="text-gradient font-semibold">these words</span>
+```
+
+The gradient itself is defined as `.text-gradient` in [`src/index.css`](src/index.css), and goes
+from `--color-accent` to `--color-accent-2`.
+
+**Use it sparingly.** One or two highlights per screen read as emphasis; more and they stop meaning
+anything. Note that `[[` and `]]` are the markers precisely because `*` already appears in text
+like `A* Pathfinding`.
+
 ### Add your CV
 
 Drop the PDF into `public/` (for example `public/Aziz_Hizem_CV.pdf`), then in `profile.js`:

@@ -1,5 +1,5 @@
 import { more } from '../data/projects'
-import { ArrowIcon, Section, Tag } from './ui'
+import { Accented, ArrowIcon, Section, Tag } from './ui'
 
 export default function More() {
   return (
@@ -12,7 +12,9 @@ export default function More() {
             style={{ '--reveal-delay': `${(i % 2) * 80}ms` }}
           >
             <h3 className="text-xl font-bold">{p.title}</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-muted">{p.summary}</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-muted">
+              <Accented text={p.summary} />
+            </p>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {p.stack.map((s) => (
                 <Tag key={s}>{s}</Tag>
