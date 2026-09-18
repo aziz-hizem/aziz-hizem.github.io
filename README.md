@@ -75,41 +75,28 @@ headline: [
 
 ### Highlight words with the gradient
 
-Wrap any words in **double square brackets** and they get the teal-to-blue gradient, like
-*curiosity* in the headline:
+Put **double square brackets** around any words and they get the teal-to-blue gradient:
 
 ```js
-tagline: 'Inspects blister packs: counts pills and [[flags color anomalies]].'
+role: 'Final-year engineering student at [[INSAT]]',
+headline: 'These projects are where my [[curiosity]] landed. [[DevOps]], [[AI]], software that…',
 ```
 
-This works in the fields that are rendered through the `Accented` helper:
+Use as many as you like, in any of these text fields:
 
-| File | Fields |
-|---|---|
-| `profile.js` | `headline` (uses `accent: true` instead, see above) |
-| `projects.js` | `tagline`, `description`, `highlights`, `summary`, `works`, `roadmap` |
-| components | any `title` or `intro` passed to `<Section>` |
+- **`src/data/profile.js`**: `role`, `roleNote`, `headline`, `availability.detail`
+- **`src/data/projects.js`**: `tagline`, `description`, `highlights`, `summary`, `works`, `roadmap`
+- section `title` and `intro` passed to `<Section>` in the components
 
-To use it somewhere not in that list, import the helper and wrap the text:
-
-```jsx
-import { Accented } from './ui'
-
-<p><Accented text={someText} /></p>
-```
-
-Or, for text written directly in a component, use the class on its own:
+For text written straight into a component, use the class instead:
 
 ```jsx
 <span className="text-gradient font-semibold">these words</span>
 ```
 
-The gradient itself is defined as `.text-gradient` in [`src/index.css`](src/index.css), and goes
-from `--color-accent` to `--color-accent-2`.
-
-**Use it sparingly.** One or two highlights per screen read as emphasis; more and they stop meaning
-anything. Note that `[[` and `]]` are the markers precisely because `*` already appears in text
-like `A* Pathfinding`.
+The gradient is `.text-gradient` in [`src/index.css`](src/index.css), running from `--color-accent`
+to `--color-accent-2`. The markers are `[[ ]]` and not `*` because `*` already appears in text like
+`A* Pathfinding`.
 
 ### Add your CV
 

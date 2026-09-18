@@ -1,16 +1,11 @@
 // Personal details shown across the site. Links set to null are simply not rendered.
 export const profile = {
   name: 'Aziz Hizem',
-  role: 'Final-year engineering student at INSAT, industrial computing and automation',
+  role: 'Final-year engineering student at INSAT',
   roleNote: 'National engineer diploma, 2027',
-  // Rendered as one sentence; parts marked accent get the gradient treatment.
-  headline: [
-    { text: 'These projects are where my ' },
-    { text: 'curiosity', accent: true },
-    {
-      text: ' landed. DevOps, AI, software that solves a problem or makes something easier, and the hardware and automation I study.',
-    },
-  ],
+  // Put [[double brackets]] around any words to give them the gradient.
+  headline:
+    'These projects are where my [[curiosity]] landed. DevOps, AI, software that solves a problem or makes something easier, and the hardware and automation I study.',
   availability: {
     label: 'Open to internships',
     detail: 'End-of-studies internship, 5–6 months, starting February 2027',

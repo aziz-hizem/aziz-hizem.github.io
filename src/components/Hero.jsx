@@ -1,5 +1,5 @@
 import { profile } from '../data/profile'
-import { GitHubIcon, LinkedInIcon, MailIcon } from './ui'
+import { Accented, GitHubIcon, LinkedInIcon, MailIcon } from './ui'
 
 const secondary =
   'inline-flex items-center gap-2 rounded-full border border-line-2 px-4 py-2 text-sm font-medium transition-colors hover:border-accent/60 hover:bg-surface-2'
@@ -39,7 +39,7 @@ function Availability() {
           <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18" />
         </svg>
         <span>
-          <span className="font-medium text-ink">{label}</span> · {detail}
+          <span className="font-medium text-ink">{label}</span> · <Accented text={detail} />
         </span>
       </div>
     </div>
@@ -68,26 +68,18 @@ export default function Hero() {
               {profile.name}
             </h1>
             <p className="reveal mt-4 font-display text-xl font-medium text-muted sm:text-2xl" style={{ '--reveal-delay': '120ms' }}>
-              {profile.role}
+              <Accented text={profile.role} />
             </p>
             {profile.roleNote && (
               <p className="reveal mt-1.5 text-sm text-dim" style={{ '--reveal-delay': '150ms' }}>
-                {profile.roleNote}
+                <Accented text={profile.roleNote} />
               </p>
             )}
           </div>
         </div>
 
         <p className="reveal mt-10 max-w-3xl text-xl leading-relaxed text-ink/90 sm:text-2xl" style={{ '--reveal-delay': '180ms' }}>
-          {profile.headline.map((part, i) =>
-            part.accent ? (
-              <span key={i} className="text-gradient font-semibold">
-                {part.text}
-              </span>
-            ) : (
-              <span key={i}>{part.text}</span>
-            ),
-          )}
+          <Accented text={profile.headline} />
         </p>
 
         <ul className="reveal mt-7 flex flex-wrap gap-2" style={{ '--reveal-delay': '240ms' }}>
