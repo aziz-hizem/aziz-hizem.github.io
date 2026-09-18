@@ -82,7 +82,7 @@ export default function Hero() {
           <Accented text={profile.headline} />
         </p>
 
-        <ul className="reveal mt-7 flex flex-wrap gap-2" style={{ '--reveal-delay': '240ms' }}>
+        <ul className="reveal mt-7 flex flex-wrap gap-2" style={{ '--reveal-delay': '360ms' }}>
           {profile.interests.map((item) => (
             <li key={item} className="rounded-full bg-accent-soft px-3 py-1 text-sm font-medium text-accent">
               {item}
@@ -90,7 +90,8 @@ export default function Hero() {
           ))}
         </ul>
 
-        <div className="reveal mt-10 flex flex-wrap items-center gap-3" style={{ '--reveal-delay': '300ms' }}>
+        {/* No "reveal" class here on purpose: the buttons must be visible the moment the page loads */}
+        <div className="mt-10 flex flex-wrap items-center gap-3">
           <a
             href="#projects"
             className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(63,214,176,0.7)]"
