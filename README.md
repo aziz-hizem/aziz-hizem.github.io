@@ -62,16 +62,8 @@ git push
 
 ### Change your headline, role or availability
 
-[`src/data/profile.js`](src/data/profile.js), at the top. The headline is split into parts so some
-words can get the teal-to-blue gradient. Set `accent: true` on a part to highlight it:
-
-```js
-headline: [
-  { text: 'These projects are where my ' },
-  { text: 'curiosity', accent: true },   // ← gradient
-  { text: ' landed. DevOps, AI, …' },
-],
-```
+[`src/data/profile.js`](src/data/profile.js), at the top. They are plain strings, so just rewrite
+them. To colour some words, see the next section.
 
 ### Highlight words with the gradient
 
