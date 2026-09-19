@@ -142,8 +142,16 @@ no screenshot. It is plain SVG and can be edited in a text editor.
 
 ### Replace the portrait
 
-Overwrite `public/profile.webp` with a **square** image (640×640 is plenty). The circular shape,
-ring and glow come from the CSS, so any square photo works.
+The site shows `public/profile.webp`, a 640×640 compressed copy of the square source photo
+`public/profile.png` (the source is git-ignored because it is several MB). After replacing
+`profile.png` with a new **square** photo, regenerate the web copy:
+
+```bash
+python -c "from PIL import Image; Image.open('public/profile.png').convert('RGB').resize((640,640)).save('public/profile.webp','WEBP',quality=88)"
+```
+
+The circular shape, ring and glow come from the CSS. The ring colours are set in `Portrait` in
+`Hero.jsx`.
 
 ### Change the colors
 

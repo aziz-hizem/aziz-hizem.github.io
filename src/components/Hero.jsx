@@ -17,7 +17,7 @@ function Portrait() {
       {/* gradient ring */}
       <div
         className="relative rounded-full p-[3px] shadow-[0_20px_60px_-20px_rgba(61,208,196,0.45)]"
-        style={{ background: 'linear-gradient(135deg, #37bbb0, #6397e6, #37bbb0)' }}
+        style={{ background: 'linear-gradient(135deg, #2e9c93, #537ebf, #2e9c93)' }}
       >
         <div className="rounded-full bg-bg p-[3px]">
           <img
