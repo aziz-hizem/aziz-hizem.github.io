@@ -2,7 +2,8 @@ import { featured } from '../data/projects'
 import { Accented, LinkButton, Section, Tag } from './ui'
 
 function ProjectCard({ project, index }) {
-  const flip = index % 2 === 1
+  // Project 1 has its text on the left and the image on the right, then it alternates.
+  const flip = index % 2 === 0
   const num = String(index + 1).padStart(2, '0')
   return (
     <article className="card reveal grid gap-6 rounded-3xl border border-line bg-surface p-4 sm:p-5 lg:grid-cols-5 lg:gap-8">
