@@ -49,7 +49,7 @@ export function LinkButton({ href, children, primary = false, external = true })
   const base =
     'group inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-sm font-medium transition-all duration-300'
   const style = primary
-    ? 'bg-accent text-accent-ink hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(63,214,176,0.7)]'
+    ? 'bg-accent text-accent-ink hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(61,208,196,0.7)]'
     : 'border border-line-2 text-ink hover:border-accent/60 hover:bg-surface-2'
   return (
     <a href={href} {...(external ? { target: '_blank', rel: 'noreferrer' } : {})} className={`${base} ${style}`}>

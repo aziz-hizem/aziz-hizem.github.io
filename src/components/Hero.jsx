@@ -11,10 +11,10 @@ function Portrait() {
       <div
         aria-hidden="true"
         className="absolute -inset-6 rounded-full opacity-60 blur-2xl"
-        style={{ background: 'radial-gradient(closest-side, rgba(63,214,176,0.35), rgba(110,168,255,0.15) 65%, transparent)' }}
+        style={{ background: 'radial-gradient(closest-side, rgba(61,208,196,0.35), rgba(110,168,255,0.15) 65%, transparent)' }}
       />
       {/* gradient ring */}
-      <div className="relative rounded-full bg-gradient-to-br from-accent via-accent-2 to-accent p-[3px] shadow-[0_20px_60px_-20px_rgba(63,214,176,0.45)]">
+      <div className="relative rounded-full bg-gradient-to-br from-accent via-accent-2 to-accent p-[3px] shadow-[0_20px_60px_-20px_rgba(61,208,196,0.45)]">
         <div className="rounded-full bg-bg p-[3px]">
           <img
             src="/profile.webp"
@@ -54,7 +54,7 @@ export default function Hero() {
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -left-40 -top-56 h-[38rem] w-[38rem] animate-float rounded-full opacity-40 blur-3xl"
-        style={{ background: 'radial-gradient(closest-side, rgba(63,214,176,0.45), rgba(110,168,255,0.18) 60%, transparent 100%)' }}
+        style={{ background: 'radial-gradient(closest-side, rgba(61,208,196,0.38), rgba(90,140,255,0.26) 60%, transparent 100%)' }}
       />
 
       <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-16 sm:px-8 sm:pt-28">
@@ -94,7 +94,7 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <a
             href="#projects"
-            className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(63,214,176,0.7)]"
+            className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(61,208,196,0.7)]"
           >
             See my work
           </a>

@@ -27,7 +27,7 @@ export default function Current() {
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full opacity-30 blur-3xl"
-          style={{ background: 'radial-gradient(closest-side, rgba(63,214,176,0.6), transparent)' }}
+          style={{ background: 'radial-gradient(closest-side, rgba(61,208,196,0.6), transparent)' }}
         />
         <div className="relative grid gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">

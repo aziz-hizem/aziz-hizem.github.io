@@ -146,16 +146,16 @@ Top of [`src/index.css`](src/index.css), in the `@theme` block. These names are 
 
 | Name | Now | Used for |
 |---|---|---|
-| `--color-bg` | near-black | page background |
-| `--color-surface` | dark grey | cards |
-| `--color-line` | grey | borders |
+| `--color-bg` | deep navy | page background |
+| `--color-surface` | dark navy | cards |
+| `--color-line` | slate blue | borders |
 | `--color-ink` | near-white | main text |
-| `--color-muted` | grey | secondary text |
-| `--color-accent` | teal | highlights, buttons, links |
+| `--color-muted` | blue-grey | secondary text |
+| `--color-accent` | blue-leaning teal | highlights, buttons, links |
 | `--color-accent-2` | blue | second half of gradients |
 
 Change `--color-accent` and the whole site follows. The glow effects hardcode the teal as
-`rgba(63, 214, 176, …)`, so search for that value if you change the accent.
+`rgba(61, 208, 196, …)`, so search for that value if you change the accent.
 
 ### Change the fonts
 

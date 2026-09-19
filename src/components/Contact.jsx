@@ -12,7 +12,7 @@ export default function Contact() {
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full opacity-30 blur-3xl"
-          style={{ background: 'radial-gradient(closest-side, rgba(110,168,255,0.5), rgba(63,214,176,0.3) 60%, transparent)' }}
+          style={{ background: 'radial-gradient(closest-side, rgba(110,168,255,0.5), rgba(61,208,196,0.3) 60%, transparent)' }}
         />
         <div className="relative">
           <p className="label flex items-center gap-3 text-accent">
@@ -25,7 +25,7 @@ export default function Contact() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={`mailto:${links.email}`}
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(63,214,176,0.7)]"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(61,208,196,0.7)]"
             >
               <MailIcon size={16} /> {links.email}
             </a>
