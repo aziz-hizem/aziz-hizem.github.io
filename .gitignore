@@ -23,5 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 
-# Original full-size photo (the site uses public/profile.webp)
+# Original full-size photos (the site uses public/profile.webp)
 profile_picture.jpg
+profile_picture.png
