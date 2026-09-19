@@ -15,8 +15,12 @@ export const profile = {
     github: 'https://github.com/aziz-hizem',
     linkedin: 'https://www.linkedin.com/in/azizhizem/',
     email: 'azizhizem8818@gmail.com',
-    cv: null, // e.g. '/Aziz_Hizem_CV.pdf' once the file is added to public/
   },
+  // Resume downloads. Put the PDFs in public/resume/ with exactly these names.
+  resume: [
+    { label: 'English', href: '/resume/Aziz_Hizem_Resume_EN.pdf' },
+    { label: 'French', href: '/resume/Aziz_Hizem_Resume_FR.pdf' },
+  ],
 }
 
 export const skills = [

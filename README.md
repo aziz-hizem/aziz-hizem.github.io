@@ -43,6 +43,8 @@ git push
 │   │   ├── More.jsx            Small cards grid
 │   │   ├── Skills.jsx          Skill groups
 │   │   ├── Contact.jsx         Contact block and footer
+│   │   ├── ResumeMenu.jsx      Resume button and its language menu
+│   │   ├── BackToTop.jsx       Footer button that scrolls to the top
 │   │   └── ui.jsx              Shared pieces: section header, tags, buttons, icons
 │   ├── hooks/useReveal.js      Fade-in on scroll, active nav section
 │   ├── index.css               Colors, fonts, animations
@@ -90,16 +92,19 @@ The gradient is `.text-gradient` in [`src/index.css`](src/index.css), running fr
 to `--color-accent-2`. The markers are `[[ ]]` and not `*` because `*` already appears in text like
 `A* Pathfinding`.
 
-### Add your CV
+### Add your resume
 
-Drop the PDF into `public/` (for example `public/Aziz_Hizem_CV.pdf`), then in `profile.js`:
+The **Resume** button (next to Email, in the hero and in the contact block) opens a menu with one
+download per language. Put the two PDFs in `public/resume/` with exactly these names:
 
-```js
-cv: '/Aziz_Hizem_CV.pdf',   // was null
+```
+public/resume/Aziz_Hizem_Resume_EN.pdf
+public/resume/Aziz_Hizem_Resume_FR.pdf
 ```
 
-The CV button appears by itself. Anything in `public/` is reachable at the site root, so
-`public/foo.pdf` becomes `aziz-hizem.github.io/foo.pdf`.
+Commit and push, and the downloads work. To rename the files, change the matching `href` in
+`resume` at the bottom of the profile block in `profile.js`. To add a language, add a line there;
+to hide the button, set `resume: []`.
 
 ### Add or edit a skill
 

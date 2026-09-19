@@ -1,4 +1,6 @@
 import { profile } from '../data/profile'
+import BackToTop from './BackToTop'
+import ResumeMenu from './ResumeMenu'
 import { GitHubIcon, LinkedInIcon, MailIcon } from './ui'
 
 const secondary =
@@ -7,13 +9,15 @@ const secondary =
 export default function Contact() {
   const { links, availability } = profile
   return (
-    <section id="contact" className="mx-auto w-full max-w-6xl px-5 pb-24 pt-8 sm:px-8">
-      <div className="reveal relative overflow-hidden rounded-3xl border border-line bg-surface p-8 sm:p-14">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full opacity-30 blur-3xl"
-          style={{ background: 'radial-gradient(closest-side, rgba(110,168,255,0.5), rgba(61,208,196,0.3) 60%, transparent)' }}
-        />
+    <section id="contact" className="mx-auto w-full max-w-6xl px-5 pb-16 pt-8 sm:px-8">
+      <div className="reveal relative rounded-3xl border border-line bg-surface p-8 sm:p-14">
+        {/* Glow is clipped in its own layer so the resume menu can open past the card edge */}
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
+          <div
+            className="absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full opacity-30 blur-3xl"
+            style={{ background: 'radial-gradient(closest-side, rgba(110,168,255,0.5), rgba(61,208,196,0.3) 60%, transparent)' }}
+          />
+        </div>
         <div className="relative">
           <p className="label flex items-center gap-3 text-accent">
             <span className="text-dim">05</span> Contact
@@ -21,7 +25,7 @@ export default function Contact() {
           <h2 className="mt-3 text-4xl font-bold sm:text-6xl">
             Let's talk <span className="text-gradient">internships</span>.
           </h2>
-          <p className="mt-4 max-w-xl text-lg text-muted">{availability.detail}. Remote or on site, anywhere.</p>
+          <p className="mt-4 max-w-xl text-lg text-muted">{availability.detail}. Hybrid or on site, anywhere.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href={`mailto:${links.email}`}
@@ -29,6 +33,7 @@ export default function Contact() {
             >
               <MailIcon size={16} /> {links.email}
             </a>
+            <ResumeMenu className={secondary} />
             <a href={links.linkedin} target="_blank" rel="noreferrer" className={secondary}>
               <LinkedInIcon size={16} /> LinkedIn
             </a>
@@ -38,9 +43,11 @@ export default function Contact() {
           </div>
         </div>
       </div>
-      <footer className="mt-10 flex flex-col items-start justify-between gap-2 text-xs text-dim sm:flex-row">
-        <span>© {new Date().getFullYear()} {profile.name}</span>
-        <span>React · Vite · Tailwind CSS · GitHub Actions → GitHub Pages</span>
+
+      <footer className="mt-12 flex flex-col items-center gap-5 border-t border-line pt-8 text-sm text-muted sm:flex-row sm:justify-between">
+        <span className="text-dim">© {new Date().getFullYear()} {profile.name}</span>
+        <span className="font-display font-medium text-ink/80">Thank you for visiting my portfolio</span>
+        <BackToTop />
       </footer>
     </section>
   )

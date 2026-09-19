@@ -1,4 +1,5 @@
 import { profile } from '../data/profile'
+import ResumeMenu from './ResumeMenu'
 import { Accented, GitHubIcon, LinkedInIcon, MailIcon } from './ui'
 
 const secondary =
@@ -14,7 +15,10 @@ function Portrait() {
         style={{ background: 'radial-gradient(closest-side, rgba(61,208,196,0.35), rgba(110,168,255,0.15) 65%, transparent)' }}
       />
       {/* gradient ring */}
-      <div className="relative rounded-full bg-gradient-to-br from-accent via-accent-2 to-accent p-[3px] shadow-[0_20px_60px_-20px_rgba(61,208,196,0.45)]">
+      <div
+        className="relative rounded-full p-[3px] shadow-[0_20px_60px_-20px_rgba(61,208,196,0.45)]"
+        style={{ background: 'linear-gradient(135deg, #37bbb0, #6397e6, #37bbb0)' }}
+      >
         <div className="rounded-full bg-bg p-[3px]">
           <img
             src="/profile.webp"
@@ -49,13 +53,15 @@ function Availability() {
 export default function Hero() {
   const { links } = profile
   return (
-    <section id="top" className="relative overflow-hidden">
-      <div className="dot-grid pointer-events-none absolute inset-0" aria-hidden="true" />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -left-40 -top-56 h-[38rem] w-[38rem] animate-float rounded-full opacity-40 blur-3xl"
-        style={{ background: 'radial-gradient(closest-side, rgba(61,208,196,0.38), rgba(90,140,255,0.26) 60%, transparent 100%)' }}
-      />
+    <section id="top" className="relative">
+      {/* Background layers, clipped here so the resume menu below is never cut off */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div className="dot-grid absolute inset-0" />
+        <div
+          className="absolute -left-40 -top-56 h-[38rem] w-[38rem] animate-float rounded-full opacity-40 blur-3xl"
+          style={{ background: 'radial-gradient(closest-side, rgba(61,208,196,0.38), rgba(90,140,255,0.26) 60%, transparent 100%)' }}
+        />
+      </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-16 sm:px-8 sm:pt-28">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
@@ -107,11 +113,7 @@ export default function Hero() {
           <a href={`mailto:${links.email}`} className={secondary}>
             <MailIcon size={16} /> Email
           </a>
-          {links.cv && (
-            <a href={links.cv} target="_blank" rel="noreferrer" className={secondary}>
-              CV (PDF)
-            </a>
-          )}
+          <ResumeMenu className={secondary} />
         </div>
       </div>
     </section>
