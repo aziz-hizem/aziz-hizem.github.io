@@ -1,5 +1,5 @@
 import { profile } from '../data/profile'
-import ResumeMenu from './ResumeMenu'
+import CvMenu from './CvMenu'
 import { Accented, GitHubIcon, LinkedInIcon, MailIcon } from './ui'
 
 const secondary =
@@ -54,7 +54,7 @@ export default function Hero() {
   const { links } = profile
   return (
     <section id="top" className="relative">
-      {/* Background layers, clipped here so the resume menu below is never cut off */}
+      {/* Background layers, clipped here so the CV menu below is never cut off */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
         <div className="dot-grid absolute inset-0" />
         <div
@@ -113,7 +113,7 @@ export default function Hero() {
           <a href={`mailto:${links.email}`} className={secondary}>
             <MailIcon size={16} /> Email
           </a>
-          <ResumeMenu className={secondary} />
+          <CvMenu className={secondary} />
         </div>
       </div>
     </section>

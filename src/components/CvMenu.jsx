@@ -26,9 +26,9 @@ function Chevron({ open }) {
   )
 }
 
-// "Resume" button that opens a small menu with one download per language.
-// The files and labels come from profile.resume in src/data/profile.js.
-export default function ResumeMenu({ className = '' }) {
+// "CV" button that opens a small menu with one download per language.
+// The files and labels come from profile.cv in src/data/profile.js.
+export default function CvMenu({ className = '' }) {
   const [open, setOpen] = useState(false)
   const ref = useRef(null)
 
@@ -48,7 +48,7 @@ export default function ResumeMenu({ className = '' }) {
     }
   }, [open])
 
-  if (!profile.resume?.length) return null
+  if (!profile.cv?.length) return null
 
   return (
     <div ref={ref} className="relative">
@@ -59,7 +59,7 @@ export default function ResumeMenu({ className = '' }) {
         onClick={() => setOpen((v) => !v)}
         className={`${className} ${open ? 'border-accent/60 bg-surface-2' : ''}`}
       >
-        <DownloadIcon /> Resume <Chevron open={open} />
+        <DownloadIcon /> CV <Chevron open={open} />
       </button>
 
       {open && (
@@ -67,7 +67,7 @@ export default function ResumeMenu({ className = '' }) {
           role="menu"
           className="menu-in absolute left-0 top-full z-30 mt-2 min-w-[12rem] rounded-2xl border border-line-2 bg-surface p-1.5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)]"
         >
-          {profile.resume.map((file) => (
+          {profile.cv.map((file) => (
             <a
               key={file.href}
               role="menuitem"

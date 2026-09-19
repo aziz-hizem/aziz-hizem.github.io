@@ -1,6 +1,6 @@
 import { profile } from '../data/profile'
 import BackToTop from './BackToTop'
-import ResumeMenu from './ResumeMenu'
+import CvMenu from './CvMenu'
 import { GitHubIcon, LinkedInIcon, MailIcon } from './ui'
 
 const secondary =
@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section id="contact" className="mx-auto w-full max-w-6xl px-5 pb-16 pt-8 sm:px-8">
       <div className="reveal relative rounded-3xl border border-line bg-surface p-8 sm:p-14">
-        {/* Glow is clipped in its own layer so the resume menu can open past the card edge */}
+        {/* Glow is clipped in its own layer so the CV menu can open past the card edge */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
           <div
             className="absolute -bottom-40 -right-20 h-[28rem] w-[28rem] rounded-full opacity-30 blur-3xl"
@@ -33,7 +33,7 @@ export default function Contact() {
             >
               <MailIcon size={16} /> {links.email}
             </a>
-            <ResumeMenu className={secondary} />
+            <CvMenu className={secondary} />
             <a href={links.linkedin} target="_blank" rel="noreferrer" className={secondary}>
               <LinkedInIcon size={16} /> LinkedIn
             </a>

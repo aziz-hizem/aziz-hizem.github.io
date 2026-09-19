@@ -10,16 +10,16 @@ export const profile = {
     label: 'Open to internships',
     detail: 'End-of-studies internship, 5–6 months, starting February 2027',
   },
-  interests: ['DevOps & Cloud', 'AI & Computer Vision', 'Software', 'Hardware & Automation'],
+  interests: ['DevOps & Cloud', 'AI & Computer Vision', 'Software Solutions', 'Hardware & Automation'],
   links: {
     github: 'https://github.com/aziz-hizem',
     linkedin: 'https://www.linkedin.com/in/azizhizem/',
     email: 'azizhizem8818@gmail.com',
   },
-  // Resume downloads. Put the PDFs in public/resume/ with exactly these names.
-  resume: [
-    { label: 'English', href: '/resume/Aziz_Hizem_Resume_EN.pdf' },
-    { label: 'French', href: '/resume/Aziz_Hizem_Resume_FR.pdf' },
+  // CV downloads. Put the PDFs in public/cv/ with exactly these names.
+  cv: [
+    { label: 'English', href: '/cv/Aziz_Hizem_CV_EN.pdf' },
+    { label: 'French', href: '/cv/Aziz_Hizem_CV_FR.pdf' },
   ],
 }
 
