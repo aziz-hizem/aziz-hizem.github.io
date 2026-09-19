@@ -4,14 +4,14 @@
   --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Bricolage Grotesque", "Instrument Sans", ui-sans-serif, sans-serif;
 
-  --color-bg: #06070f;
-  --color-surface: #0c0f1c;
-  --color-surface-2: #131829;
-  --color-line: #1d2336;
-  --color-line-2: #29314a;
+  --color-bg: #0b0e1b;
+  --color-surface: #111629;
+  --color-surface-2: #181e34;
+  --color-line: #232a41;
+  --color-line-2: #2f3752;
   --color-ink: #e8ecf5;
-  --color-muted: #8e97ae;
-  --color-dim: #5b6680;
+  --color-muted: #939cb4;
+  --color-dim: #646f8e;
   --color-accent: #3dd0c4;
   --color-accent-2: #6ea8ff;
   --color-accent-ink: #04121a;
@@ -31,6 +31,7 @@
 }
 
 html {
+  color-scheme: dark;
   background-color: var(--color-bg);
   color: var(--color-ink);
 }
