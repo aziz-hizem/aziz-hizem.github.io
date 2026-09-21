@@ -26,3 +26,6 @@ dist-ssr
 # Source photos (the site uses the compressed public/profile.webp made from public/profile.png)
 profile_picture.png
 public/profile.png
+
+# Source exports for project images: only the .webp copies are published
+public/projects/*.png

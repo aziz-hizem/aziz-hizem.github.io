@@ -142,6 +142,14 @@ python -c "from PIL import Image; im=Image.open('shot.png').convert('RGB'); im.t
 
 For a full-window screenshot, cropping it to 16:9 first looks tidier than leaving it tall.
 
+**Tall (portrait) images** such as architecture diagrams: set `tallImage: true` on the project in
+`projects.js`. The card then gives the image a narrower column, caps its height and centres it, so
+the card does not become enormous. Leave a small white margin inside the image, or the rounded
+frame clips whatever sits in its corners.
+
+`.png` files in `public/projects/` are git-ignored: they are treated as sources, and only the
+`.webp` copies are published.
+
 ### Replace the portrait
 
 The site shows `public/profile.webp`, a 640×640 compressed copy of the square source photo

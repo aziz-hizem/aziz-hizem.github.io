@@ -6,7 +6,8 @@ export const featured = [
     id: 'azure-devops-cicd-pipeline',
     title: 'Azure DevOps CI/CD Pipeline',
     area: 'DevOps',
-    image: '/projects/azure-devops-cicd-pipeline.svg',
+    image: '/projects/azure-devops-cicd-pipeline.webp',
+    tallImage: true, // portrait diagram: narrower image column, capped height
     tagline: 'A complete software delivery pipeline on Azure, built during a two-month DevOps internship at an airline.',
     description:
       'Build, tests, secret scanning and a SonarQube quality gate that blocks bad code, then Docker packaging and promotion through Dev, Staging and Production with a manual approval, all on Terraform-managed infrastructure.',
