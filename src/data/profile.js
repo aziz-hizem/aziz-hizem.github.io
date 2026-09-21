@@ -16,11 +16,6 @@ export const profile = {
     linkedin: 'https://www.linkedin.com/in/azizhizem/',
     email: 'azizhizem8818@gmail.com',
   },
-  // CV downloads. Put the PDFs in public/cv/ with exactly these names.
-  cv: [
-    { label: 'English', href: '/cv/Aziz_Hizem_CV_EN.pdf' },
-    { label: 'French', href: '/cv/Aziz_Hizem_CV_FR.pdf' },
-  ],
 }
 
 export const skills = [

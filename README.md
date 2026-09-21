@@ -43,7 +43,7 @@ git push
 │   │   ├── More.jsx            Small cards grid
 │   │   ├── Skills.jsx          Skill groups
 │   │   ├── Contact.jsx         Contact block and footer
-│   │   ├── CvMenu.jsx          CV button and its language menu
+│   │   ├── CvButton.jsx        'Ask for my CV' email button
 │   │   ├── BackToTop.jsx       Footer button that scrolls to the top
 │   │   └── ui.jsx              Shared pieces: section header, tags, buttons, icons
 │   ├── hooks/useReveal.js      Fade-in on scroll, active nav section
@@ -92,19 +92,13 @@ The gradient is `.text-gradient` in [`src/index.css`](src/index.css), running fr
 to `--color-accent-2`. The markers are `[[ ]]` and not `*` because `*` already appears in text like
 `A* Pathfinding`.
 
-### Add your CV
+### The CV button
 
-The **CV** button (next to Email, in the hero and in the contact block) opens a menu with one
-download per language. Put the two PDFs in `public/cv/` with exactly these names:
+The CV itself is **not published**. The button next to Email (hero and contact block) opens a
+pre-addressed email asking for it, so the CV is sent per application instead of sitting online.
+It is [`src/components/CvButton.jsx`](src/components/CvButton.jsx); the subject line is in there.
 
-```
-public/cv/Aziz_Hizem_CV_EN.pdf
-public/cv/Aziz_Hizem_CV_FR.pdf
-```
-
-Commit and push, and the downloads work. To rename the files, change the matching `href` in
-`cv` at the bottom of the profile block in `profile.js`. To add a language, add a line there;
-to hide the button, set `cv: []`.
+To publish a PDF instead, put it in `public/` and turn the button back into a link to it.
 
 ### Add or edit a skill
 
