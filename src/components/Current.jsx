@@ -32,7 +32,7 @@ export default function Current() {
         <div className="relative grid gap-8 lg:grid-cols-5">
           <div className="lg:col-span-2">
             <a href={p.links[0].href} target="_blank" rel="noreferrer" className="block overflow-hidden rounded-2xl border border-line bg-bg">
-              <img src={p.image} alt={`${p.title} screenshot`} loading="lazy" className="aspect-video w-full object-cover" />
+              <img src={p.image} alt={`${p.title} screenshot`} loading="lazy" className="w-full object-cover" />
             </a>
             <div className="mt-4 flex items-center gap-2">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-2.5 py-0.5 text-xs font-medium text-accent">
@@ -63,10 +63,12 @@ export default function Current() {
           <div className="grid gap-8 sm:grid-cols-2 lg:col-span-3">
             <List title="Works today" items={p.works} marker="✓" />
             <List title="Roadmap" items={p.roadmap} marker="→" />
-            <div className="rounded-2xl border border-line bg-surface-2 p-4 text-sm text-muted sm:col-span-2">
-              <span className="font-medium text-ink">Side exploration. </span>
-              {p.exploration}
-            </div>
+            {p.exploration && (
+              <div className="rounded-2xl border border-line bg-surface-2 p-4 text-sm text-muted sm:col-span-2">
+                <span className="font-medium text-ink">Side exploration. </span>
+                {p.exploration}
+              </div>
+            )}
           </div>
         </div>
       </div>

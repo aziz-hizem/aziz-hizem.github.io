@@ -11,13 +11,13 @@ function ProjectCard({ project, index }) {
         href={project.links[0].href}
         target="_blank"
         rel="noreferrer"
-        className={`group relative block overflow-hidden rounded-2xl border border-line bg-bg lg:col-span-3 ${flip ? 'lg:order-2' : ''}`}
+        className={`group relative block self-center overflow-hidden rounded-2xl border border-line bg-bg lg:col-span-3 ${flip ? 'lg:order-2' : ''}`}
       >
         <img
           src={project.image}
           alt={`${project.title} screenshot`}
           loading={index < 2 ? 'eager' : 'lazy'}
-          className="aspect-video w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+          className="w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
         <span className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-bg/80 px-3 py-1 text-xs font-medium text-ink opacity-0 backdrop-blur transition-all duration-500 group-hover:opacity-100">

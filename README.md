@@ -38,7 +38,7 @@ git push
 │   ├── components/
 │   │   ├── Nav.jsx             Top bar: menu, progress line
 │   │   ├── Hero.jsx            Portrait, name, headline, buttons
-│   │   ├── Featured.jsx        The 7 big project cards
+│   │   ├── Featured.jsx        The big project cards
 │   │   ├── Current.jsx         "Currently building" block
 │   │   ├── More.jsx            Small cards grid
 │   │   ├── Skills.jsx          Skill groups
@@ -52,7 +52,7 @@ git push
 └── public/                     Files served as-is
     ├── profile.webp            Portrait (640×640)
     ├── favicon.svg             Browser tab icon
-    └── projects/               One image per project (1280×720)
+    └── projects/               One image per project (WebP, up to 1280 px wide)
 ```
 
 **Rule of thumb:** changing *words, links or projects* → `src/data/`. Changing *how it looks* →
@@ -108,7 +108,7 @@ to hide the button, set `cv: []`.
 
 ### Add or edit a skill
 
-`skills` at the bottom of `profile.js`. Four groups, each a list of strings. Add a group by copying
+`skills` at the bottom of `profile.js`. One group per card, each a list of strings. Add a group by copying
 the shape of an existing one.
 
 ### Edit a project
@@ -117,7 +117,7 @@ the shape of an existing one.
 
 | List | Shown as | Fields |
 |---|---|---|
-| `featured` | The 7 large cards | `title`, `area`, `image`, `tagline`, `description`, `highlights`, `stack`, `links` |
+| `featured` | The large cards | `title`, `area`, `image`, `tagline`, `description`, `highlights`, `stack`, `links` |
 | `current` | The "Currently building" block | plus `status`, `works`, `roadmap`, `exploration` |
 | `more` | The small cards | `title`, `summary`, `stack`, `links` |
 
@@ -130,15 +130,23 @@ the shape of an existing one.
 
 ### Replace a project image
 
-Export at **1280×720** and save as WebP into `public/projects/`, keeping the same file name as the
-`image` field. From a PNG or JPG:
+Project screenshots live in `public/projects/`, one WebP per project, named after the `image`
+field in `projects.js` (the Azure project uses a hand-drawn `.svg` instead, editable in any text
+editor).
+
+Images **keep their own shape**: a wide, short screenshot stays wide and short, and the card
+centres it next to the text. Nothing is letterboxed, so there are no empty bands. Two rules:
+
+- **Width**: 1280 px is plenty. Anything wider is wasted.
+- **Height**: keep it under about 860 px, or the card gets tall.
+
+To convert a new screenshot, from the `Portfolio` folder:
 
 ```bash
-python -c "from PIL import Image; im=Image.open('shot.png').convert('RGB').resize((1280,720)); im.save('public/projects/name.webp','WEBP',quality=85)"
+python -c "from PIL import Image; im=Image.open('shot.png').convert('RGB'); im.thumbnail((1280,860)); im.save('public/projects/NAME.webp','WEBP',quality=85)"
 ```
 
-The Azure project uses a hand-drawn diagram, `azure-devops-cicd-pipeline.svg`, since that repo has
-no screenshot. It is plain SVG and can be edited in a text editor.
+For a full-window screenshot, cropping it to 16:9 first looks tidier than leaving it tall.
 
 ### Replace the portrait
 

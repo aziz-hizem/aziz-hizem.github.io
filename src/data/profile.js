@@ -25,19 +25,27 @@ export const profile = {
 
 export const skills = [
   {
-    group: 'DevOps & Cloud',
-    items: ['Azure DevOps', 'Azure Pipelines', 'GitHub Actions', 'Docker', 'Terraform', 'SonarQube', 'Gitleaks', 'Linux', 'Git'],
+    group: 'Cloud & Infrastructure',
+    items: ['AWS (Lambda, S3, DynamoDB, API Gateway, CloudFront, ECR)', 'Azure (Container Apps, Container Registry, Azure SQL)', 'Terraform', 'Docker', 'Linux'],
+  },
+  {
+    group: 'DevOps & CI/CD',
+    items: ['Azure DevOps (Repos, Pipelines, Boards)', 'GitLab CI/CD', 'Infrastructure as code', 'SonarQube', 'Git'],
   },
   {
     group: 'AI & Computer Vision',
-    items: ['OpenCV', 'YOLO / Ultralytics', 'dlib', 'NEAT neuroevolution', 'LLM APIs (Groq, Llama 3)', 'Prompt design', 'Text-to-SQL', 'RAG'],
+    items: ['LLM integration (AWS Bedrock, LangGraph)', 'Prompt engineering', 'Object detection (YOLO11)', 'Computer vision (OpenCV)', 'Text-to-SQL', 'RAG'],
   },
   {
-    group: 'Software',
-    items: ['Python', 'FastAPI', 'TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Electron', 'C# / .NET', 'SQL / SQLite', 'REST APIs'],
+    group: 'Programming & APIs',
+    items: ['Python', 'Java', 'C', 'SQL', 'FastAPI', 'REST APIs', 'WebSockets', 'TypeScript', 'React'],
   },
   {
     group: 'Hardware',
     items: ['Raspberry Pi', 'Arduino', 'GPIO, LEDs & servos', 'Serial communication', 'Camera streaming'],
+  },
+  {
+    group: 'Languages',
+    items: ['English (bilingual)', 'French (bilingual)', 'Arabic (native)', 'German (basic)'],
   },
 ]

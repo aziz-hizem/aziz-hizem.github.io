@@ -64,23 +64,7 @@ export const featured = [
       'React chat UI with 11 switchable team themes',
     ],
     stack: ['React', 'FastAPI', 'SQLite', 'Groq API', 'Llama 3.1'],
-    links: [{ label: 'Repository', href: gh('F1-Chatbot-V2') }],
-  },
-  {
-    id: 'cinecasa',
-    title: 'Cinecasa',
-    area: 'Desktop App',
-    image: '/projects/cinecasa.webp',
-    tagline: 'A home cinema app that turns local movie and TV folders into a streaming-style library.',
-    description:
-      'Scans your drives, matches files on TMDB and shows posters, ratings, cast and episodes. Playback runs in MPC-HC while Cinecasa follows your progress and resumes at the exact second you stopped. Includes themed hubs, auto-play next episode and search.',
-    highlights: [
-      'Electron + React + TypeScript with a typed IPC bridge',
-      'SQLite library with a local artwork cache for instant startup',
-      'Exact resume by tracking the MPC-HC player position',
-    ],
-    stack: ['Electron', 'React', 'TypeScript', 'SQLite', 'Tailwind CSS', 'TMDB API'],
-    links: [{ label: 'Repository', href: gh('cinecasa') }],
+    links: [{ label: 'Repository', href: gh('f1-chatbot') }],
   },
   {
     id: 'astar-pathfinding-visualizer',
@@ -114,34 +98,39 @@ export const featured = [
 
 // Work in progress, shown on its own.
 export const current = {
-  id: 'spotify-chatbot',
-  title: 'Spotify Chatbot',
+  id: 'cinecasa',
+  title: 'Cinecasa',
   status: 'In progress',
-  image: '/projects/spotify-chatbot.webp',
-  tagline: 'Manage your Spotify playlists by chatting in plain English.',
+  image: '/projects/cinecasa.webp',
+  tagline: 'A home cinema app that turns local movie and TV folders into a streaming-style library.',
   description:
-    'Ask for "Blinding Lights and Levitating in my Road Trip playlist" and an LLM extracts a strict JSON intent that a FastAPI backend executes on the Spotify Web API, creating the playlist if it does not exist yet.',
+    'Scans your drives, matches every file on TMDB and shows posters, ratings, cast and episodes. Playback runs in MPC-HC while Cinecasa follows your progress and brings you back to the exact second you stopped.',
   works: [
-    'Intent extraction with few-shot prompting and JSON mode (no free-text parsing)',
-    'Spotify OAuth refresh-token flow with automatic renewal',
-    'Search, playlist lookup or creation, batch adding of tracks',
-    'React chat interface',
+    'Automatic library: filename parsing, TMDB matching and a local artwork cache',
+    'Exact resume by tracking the MPC-HC player position, and auto-play of the next episode',
+    'Continue Watching rows, search, and themed Specials hubs',
+    'Manual fixes: correct a wrong match, edit episode metadata and lock it against rescans',
   ],
   roadmap: [
-    'Remove songs, create and delete playlists with the same intent design',
-    'Playlist questions such as "what is in my Road Trip playlist"',
-    'Multi-turn conversations so follow-ups like "add that one too" work',
-    'Per-user Spotify login instead of a single refresh token',
-    'Public deployment with a live demo',
+    'Package a Windows installer and publish it as a release',
+    'Support a second player besides MPC-HC',
+    'Filters and sorting in the library view',
+    'Remember subtitle and audio track choices per show',
   ],
-  exploration:
-    'A separate RAG experiment scrapes the Spotify Web API reference into a vector store so the model can write code for any endpoint from the documentation.',
-  stack: ['React', 'Vite', 'Tailwind CSS', 'FastAPI', 'Groq API', 'Spotify Web API'],
-  links: [{ label: 'Repository', href: gh('spotify-chatbot') }],
+  stack: ['Electron', 'React', 'TypeScript', 'SQLite', 'Tailwind CSS', 'TMDB API'],
+  links: [{ label: 'Repository', href: gh('cinecasa') }],
 }
 
 // Everything else, one line each.
 export const more = [
+  {
+    id: 'spotify-chatbot',
+    title: 'Spotify Chatbot',
+    summary:
+      'Manage Spotify playlists by chatting in plain English: an LLM turns each request into a JSON intent that a FastAPI backend runs on the Spotify Web API.',
+    stack: ['React', 'FastAPI', 'Groq API', 'Spotify Web API'],
+    links: [{ label: 'Repository', href: gh('spotify-chatbot') }],
+  },
   {
     id: 'memory-monitor',
     title: 'Memory Monitor',

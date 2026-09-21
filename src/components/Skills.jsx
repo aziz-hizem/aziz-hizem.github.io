@@ -3,7 +3,7 @@ import { Section } from './ui'
 
 export default function Skills() {
   return (
-    <Section id="skills" number="04" eyebrow="Toolbox" title="Skills" intro="Everything listed here is used in at least one project above.">
+    <Section id="skills" number="04" eyebrow="Toolbox" title="Skills" intro="What I use, from internships, coursework and the projects above.">
       <div className="grid gap-4 sm:grid-cols-2">
         {skills.map((group, i) => (
           <div key={group.group} className="card reveal rounded-2xl border border-line bg-surface p-5" style={{ '--reveal-delay': `${(i % 2) * 80}ms` }}>
