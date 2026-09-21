@@ -8,13 +8,13 @@ export const featured = [
     area: 'DevOps',
     image: '/projects/azure-devops-cicd-pipeline.webp',
     tallImage: true, // portrait diagram: narrower image column, capped height
-    tagline: 'A complete software delivery pipeline on Azure, built during a two-month DevOps internship at an airline.',
+    tagline: 'A complete software delivery pipeline on Azure, built during a two-month DevOps internship at Nouvelair (Tunisian airline).',
     description:
       'Build, tests, secret scanning and a SonarQube quality gate that blocks bad code, then Docker packaging and promotion through Dev, Staging and Production with a manual approval, all on Terraform-managed infrastructure.',
     highlights: [
       'Azure Pipelines with an enforced quality gate: run 1 failed on purpose, run 2 passed (evidence kept in the repo)',
       'Container build pushed to Azure Container Apps, Azure SQL migrations with Alembic',
-      'Infrastructure as code with Terraform; GitHub Actions re-runs the checks on every push',
+      'Infrastructure as code with Terraform',
     ],
     stack: ['Azure DevOps', 'Terraform', 'Docker', 'SonarQube', 'Gitleaks', 'Python', 'FastAPI', 'GitHub Actions'],
     links: [{ label: 'Repository', href: gh('azure-devops-cicd-pipeline') }],
