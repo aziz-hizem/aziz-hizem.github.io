@@ -26,21 +26,21 @@ export const profile = {
 export const skills = [
   {
     group: 'Cloud & Infrastructure',
-    items: ['AWS (Lambda, S3, DynamoDB, API Gateway, CloudFront, ECR)', 'Azure (Container Apps, Container Registry, Azure SQL)', 'Terraform', 'Docker', 'Kubernetes', 'Linux'],
+    items: ['AWS (Lambda, S3, DynamoDB, API Gateway, CloudFront, ECR)', 'Azure (Container Apps, Container Registry, Azure SQL)', 'Terraform', 'Docker', 'Linux'],
   },
   {
     group: 'DevOps & CI/CD',
-    items: ['Azure DevOps (Repos, Pipelines, Boards)', 'GitLab CI/CD', 'Jenkins', 'Infrastructure as code', 'SonarQube', 'Git'],
+    items: ['Azure DevOps (Repos, Pipelines, Boards)', 'GitLab CI/CD', 'Infrastructure as code', 'SonarQube', 'Git'],
   },
   {
     group: 'AI & Machine Learning',
     items: [
-      'LLM integration (AWS Bedrock, LangChain, LangGraph)',
+      'LLM integration (AWS Bedrock, LangChain)',
+      'LangGraph',
       'Llama 3 (Groq)',
       'RAG',
       'Text-to-SQL',
       'NLP',
-      'Prompt engineering',
       'Object detection (YOLO11, Ultralytics)',
       'Model fine-tuning',
       'PyTorch',
@@ -49,11 +49,12 @@ export const skills = [
   },
   {
     group: 'Programming & APIs',
-    items: ['Python (Pandas, NumPy, scikit-learn)', 'Java', 'C / C++', 'SQL', 'Bash', 'TypeScript', 'FastAPI', 'REST APIs', 'WebSockets', 'React'],
+    // An item written as { name, featured: true } gets the highlighted style
+    items: [{ name: 'Python (Pandas, NumPy, scikit-learn)', featured: true }, 'Java', 'C / C++', 'SQL', 'Bash', 'TypeScript', 'FastAPI', 'REST APIs', 'WebSockets', 'React'],
   },
   {
-    group: 'Embedded & Hardware',
-    items: ['Raspberry Pi 5', 'Arduino', 'GPIO', 'Servo actuators', 'Camera integration & streaming', 'PLC programming', 'RTOS', 'Serial communication'],
+    group: 'Embedded, IoT & Industry 4.0',
+    items: ['Raspberry Pi 5', 'Arduino', 'IoT', 'Industry 4.0', 'PLC programming', 'RTOS', 'GPIO', 'Servo actuators', 'Camera integration & streaming', 'Robotics'],
   },
   {
     group: 'Office & Collaboration',

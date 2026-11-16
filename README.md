@@ -103,7 +103,8 @@ To publish a PDF instead, put it in `public/` and turn the button back into a li
 
 ### Add or edit a skill
 
-`skills` at the bottom of `profile.js`. One group per card, each a list of strings. Add a group by copying
+`skills` at the bottom of `profile.js`. One group per card, each a list of strings. Write an item as
+`{ name: 'Python', featured: true }` to give it the highlighted style. Add a group by copying
 the shape of an existing one.
 
 ### Edit a project
