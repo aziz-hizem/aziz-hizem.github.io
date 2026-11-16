@@ -35,26 +35,25 @@ export const skills = [
   {
     group: 'AI & Machine Learning',
     items: [
-      'LLM integration (AWS Bedrock, LangChain)',
-      'LangGraph',
+      'LLM integration',
+      'AWS Bedrock',
+      'LangChain & LangGraph',
       'Llama 3 (Groq)',
       'RAG',
-      'Text-to-SQL',
       'NLP',
       'Object detection (YOLO11, Ultralytics)',
       'Model fine-tuning',
-      'PyTorch',
       'OpenCV',
     ],
   },
   {
     group: 'Programming & APIs',
     // An item written as { name, featured: true } gets the highlighted style
-    items: [{ name: 'Python (Pandas, NumPy, scikit-learn)', featured: true }, 'Java', 'C / C++', 'SQL', 'Bash', 'TypeScript', 'FastAPI', 'REST APIs', 'WebSockets', 'React'],
+    items: [{ name: 'Python (Pandas, NumPy, scikit-learn)', featured: true }, 'Java', 'C / C++', 'SQL', 'Bash', 'TypeScript', 'FastAPI', 'REST APIs', 'WebSockets', 'React', 'VS Code'],
   },
   {
     group: 'Embedded, IoT & Industry 4.0',
-    items: ['Raspberry Pi 5', 'Arduino', 'IoT', 'Industry 4.0', 'PLC programming', 'RTOS', 'GPIO', 'Servo actuators', 'Camera integration & streaming', 'Robotics'],
+    items: ['Raspberry Pi 5', 'Arduino', 'IoT', 'Industry 4.0', 'PLC programming', 'RTOS', 'GPIO', 'Camera integration & streaming', 'Robotics'],
   },
   {
     group: 'Office & Collaboration',
