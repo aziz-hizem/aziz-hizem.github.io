@@ -90,8 +90,9 @@ export default function Hero() {
 
         <div className="reveal mt-6 grid max-w-4xl gap-4 sm:grid-cols-2 sm:gap-6" style={{ '--reveal-delay': '260ms' }}>
           {profile.pillars.map((pillar) => (
-            <div key={pillar.label} className="border-l-2 border-accent/60 pl-4">
-              <p className="label text-accent">{pillar.label}</p>
+            <div key={pillar.label} className="relative pl-5">
+              <span aria-hidden="true" className="absolute bottom-0.5 left-0 top-0.5 w-[3px] rounded-full bg-accent/60" />
+              <p className="text-lg font-semibold text-accent">{pillar.label}</p>
               <p className="mt-1.5 leading-relaxed text-muted">
                 <Accented text={pillar.text} />
               </p>

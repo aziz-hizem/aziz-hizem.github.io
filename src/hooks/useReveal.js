@@ -8,6 +8,11 @@ export function useReveal() {
       els.forEach((el) => el.classList.add('is-visible'))
       return
     }
+    // Anything already on the first screen, or just below it, shows right away
+    const firstScreen = window.innerHeight + 200
+    els.forEach((el) => {
+      if (el.getBoundingClientRect().top < firstScreen) el.classList.add('is-visible')
+    })
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -17,9 +22,11 @@ export function useReveal() {
           }
         }
       },
-      { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+      { rootMargin: '0px 0px 0px 0px', threshold: 0 },
     )
-    els.forEach((el) => io.observe(el))
+    els.forEach((el) => {
+      if (!el.classList.contains('is-visible')) io.observe(el)
+    })
     return () => io.disconnect()
   }, [])
 }
