@@ -2,7 +2,7 @@
 export const profile = {
   name: 'Aziz Hizem',
   role: 'Final-year engineering student at [[INSAT]]',
-  roleNote: 'Engineering Degree, 2027',
+  roleNote: null, // optional small line under the role, e.g. 'Engineering Degree, 2027'
   // Putting [[double brackets]] around text  gives it the gradient effect.
   // The big line under your name
   headline: 'I [[automate]] things to make life easier.',

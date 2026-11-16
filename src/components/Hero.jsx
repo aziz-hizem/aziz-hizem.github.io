@@ -67,20 +67,20 @@ export default function Hero() {
         <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
           <Portrait />
           <div>
-            <div className="mb-6">
-              <Availability />
-            </div>
             <h1 className="text-5xl font-extrabold leading-[1.02] sm:text-7xl">
               {profile.name}
             </h1>
-            <p className="mt-4 font-display text-xl font-medium text-muted sm:text-2xl">
+            <p className="mt-1.5 font-display text-xl font-medium text-muted sm:text-2xl">
               <Accented text={profile.role} />
             </p>
             {profile.roleNote && (
-              <p className="mt-1.5 text-sm text-dim">
+              <p className="mt-1 text-sm text-dim">
                 <Accented text={profile.roleNote} />
               </p>
             )}
+            <div className="mt-5">
+              <Availability />
+            </div>
           </div>
         </div>
 
