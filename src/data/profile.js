@@ -2,15 +2,15 @@
 export const profile = {
   name: 'Aziz Hizem',
   role: 'Final-year engineering student at [[INSAT]]',
-  roleNote: 'National Engineering Degree, 2027',
+  roleNote: 'Engineering Degree, 2027',
   // Putting [[double brackets]] around text  gives it the gradient effect.
   headline:
-    '[[These projects are where my curiosity landed.]] DevOps, AI, software that solves a problem or makes something easier, and the hardware and automation I study.',
+    'I [[automate]] things and make life easier. I study industrial computing & automation, where machines run on their own. I bring the same idea to [[software]]: AI that does the heavy lifting, and cloud pipelines that build, test and deploy code by themselves.',
   availability: {
     label: 'Open to internships',
     detail: 'End-of-studies internship, 5–6 months, starting February 2027',
   },
-  interests: ['DevOps & Cloud', 'AI & Computer Vision', 'Software Solutions', 'Hardware & Automation'],
+  interests: ['Software Solutions', 'DevOps & Cloud', 'Artificial Intelligence', 'Computing & Automation'],
   links: {
     github: 'https://github.com/aziz-hizem',
     linkedin: 'https://www.linkedin.com/in/azizhizem/',
