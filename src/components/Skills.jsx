@@ -6,7 +6,13 @@ export default function Skills() {
     <Section id="skills" number="04" eyebrow="Toolbox" title="Skills" intro="What I use, from internships, coursework and the projects above.">
       <div className="grid gap-4 sm:grid-cols-2">
         {skills.map((group, i) => (
-          <div key={group.group} className="card reveal rounded-2xl border border-line bg-surface p-5" style={{ '--reveal-delay': `${(i % 2) * 80}ms` }}>
+          <div
+            key={group.group}
+            className={`card reveal rounded-2xl border border-line bg-surface p-5 ${
+              skills.length % 2 === 1 && i === skills.length - 1 ? 'sm:col-span-2' : ''
+            }`}
+            style={{ '--reveal-delay': `${(i % 2) * 80}ms` }}
+          >
             <h3 className="label text-accent">{group.group}</h3>
             <ul className="mt-4 flex flex-wrap gap-2">
               {group.items.map((item) => (

@@ -21,23 +21,38 @@ export const profile = {
 export const skills = [
   {
     group: 'Cloud & Infrastructure',
-    items: ['AWS (Lambda, S3, DynamoDB, API Gateway, CloudFront, ECR)', 'Azure (Container Apps, Container Registry, Azure SQL)', 'Terraform', 'Docker', 'Linux'],
+    items: ['AWS (Lambda, S3, DynamoDB, API Gateway, CloudFront, ECR)', 'Azure (Container Apps, Container Registry, Azure SQL)', 'Terraform', 'Docker', 'Kubernetes', 'Linux'],
   },
   {
     group: 'DevOps & CI/CD',
-    items: ['Azure DevOps (Repos, Pipelines, Boards)', 'GitLab CI/CD', 'Infrastructure as code', 'SonarQube', 'Git'],
+    items: ['Azure DevOps (Repos, Pipelines, Boards)', 'GitLab CI/CD', 'Jenkins', 'Infrastructure as code', 'SonarQube', 'Git'],
   },
   {
-    group: 'AI & Computer Vision',
-    items: ['LLM integration (AWS Bedrock, LangGraph)', 'Prompt engineering', 'Object detection (YOLO11)', 'Computer vision (OpenCV)', 'Text-to-SQL', 'RAG'],
+    group: 'AI & Machine Learning',
+    items: [
+      'LLM integration (AWS Bedrock, LangChain, LangGraph)',
+      'Llama 3 (Groq)',
+      'RAG',
+      'Text-to-SQL',
+      'NLP',
+      'Prompt engineering',
+      'Object detection (YOLO11, Ultralytics)',
+      'Model fine-tuning',
+      'PyTorch',
+      'OpenCV',
+    ],
   },
   {
     group: 'Programming & APIs',
-    items: ['Python', 'Java', 'C', 'SQL', 'FastAPI', 'REST APIs', 'WebSockets', 'TypeScript', 'React'],
+    items: ['Python (Pandas, NumPy, scikit-learn)', 'Java', 'C / C++', 'SQL', 'Bash', 'TypeScript', 'FastAPI', 'REST APIs', 'WebSockets', 'React'],
   },
   {
-    group: 'Hardware',
-    items: ['Raspberry Pi', 'Arduino', 'GPIO, LEDs & servos', 'Serial communication', 'Camera streaming'],
+    group: 'Embedded & Hardware',
+    items: ['Raspberry Pi 5', 'Arduino', 'GPIO', 'Servo actuators', 'Camera integration & streaming', 'PLC programming', 'RTOS', 'Serial communication'],
+  },
+  {
+    group: 'Office & Collaboration',
+    items: ['Jira', 'Confluence', 'Microsoft 365 (Word, Excel, PowerPoint, OneNote, Outlook, Teams)'],
   },
   {
     group: 'Languages',
