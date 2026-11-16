@@ -4,8 +4,13 @@ export const profile = {
   role: 'Final-year engineering student at [[INSAT]]',
   roleNote: 'Engineering Degree, 2027',
   // Putting [[double brackets]] around text  gives it the gradient effect.
-  headline:
-    'I [[automate]] things and make life easier. I study industrial computing & automation, where machines run on their own. I bring the same idea to [[software]]: AI that does the heavy lifting, and cloud pipelines that build, test and deploy code by themselves.',
+  // The big line under your name
+  headline: 'I [[automate]] things to make life easier.',
+  // The two short lines under it: same idea, two worlds
+  pillars: [
+    { label: 'Machines', text: 'Industrial computing & automation, where systems run on their own.' },
+    { label: 'Software', text: 'AI that does the heavy lifting, and cloud pipelines that build, test and deploy code by themselves.' },
+  ],
   availability: {
     label: 'Open to internships',
     detail: 'End-of-studies internship, 5–6 months, starting February 2027',

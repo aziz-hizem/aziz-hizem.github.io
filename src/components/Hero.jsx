@@ -84,9 +84,20 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="reveal mt-10 max-w-3xl text-xl leading-relaxed text-ink/90 sm:text-2xl" style={{ '--reveal-delay': '180ms' }}>
+        <p className="reveal mt-12 font-display text-3xl font-bold leading-tight sm:text-5xl" style={{ '--reveal-delay': '180ms' }}>
           <Accented text={profile.headline} />
         </p>
+
+        <div className="reveal mt-6 grid max-w-4xl gap-4 sm:grid-cols-2 sm:gap-6" style={{ '--reveal-delay': '260ms' }}>
+          {profile.pillars.map((pillar) => (
+            <div key={pillar.label} className="border-l-2 border-accent/60 pl-4">
+              <p className="label text-accent">{pillar.label}</p>
+              <p className="mt-1.5 leading-relaxed text-muted">
+                <Accented text={pillar.text} />
+              </p>
+            </div>
+          ))}
+        </div>
 
         <ul className="reveal mt-7 flex flex-wrap gap-2" style={{ '--reveal-delay': '360ms' }}>
           {profile.interests.map((item) => (
