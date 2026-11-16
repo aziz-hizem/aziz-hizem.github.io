@@ -7,7 +7,7 @@ const secondary =
 
 function Portrait() {
   return (
-    <div className="reveal relative w-fit shrink-0" style={{ '--reveal-delay': '40ms' }}>
+    <div className="relative w-fit shrink-0">
       {/* soft glow behind the portrait */}
       <div
         aria-hidden="true"
@@ -36,7 +36,7 @@ function Portrait() {
 function Availability() {
   const { label, detail } = profile.availability
   return (
-    <div className="reveal glow-border inline-flex rounded-full">
+    <div className="glow-border inline-flex rounded-full">
       <div className="inline-flex items-center gap-2.5 rounded-full bg-surface px-3.5 py-1.5 text-xs text-muted">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-accent" aria-hidden="true">
           <rect x="3" y="7" width="18" height="13" rx="2" />
@@ -70,25 +70,25 @@ export default function Hero() {
             <div className="mb-6">
               <Availability />
             </div>
-            <h1 className="reveal text-5xl font-extrabold leading-[1.02] sm:text-7xl" style={{ '--reveal-delay': '60ms' }}>
+            <h1 className="text-5xl font-extrabold leading-[1.02] sm:text-7xl">
               {profile.name}
             </h1>
-            <p className="reveal mt-4 font-display text-xl font-medium text-muted sm:text-2xl" style={{ '--reveal-delay': '120ms' }}>
+            <p className="mt-4 font-display text-xl font-medium text-muted sm:text-2xl">
               <Accented text={profile.role} />
             </p>
             {profile.roleNote && (
-              <p className="reveal mt-1.5 text-sm text-dim" style={{ '--reveal-delay': '150ms' }}>
+              <p className="mt-1.5 text-sm text-dim">
                 <Accented text={profile.roleNote} />
               </p>
             )}
           </div>
         </div>
 
-        <p className="reveal mt-12 font-display text-3xl font-bold leading-tight sm:text-5xl" style={{ '--reveal-delay': '180ms' }}>
+        <p className="mt-12 font-display text-3xl font-bold leading-tight sm:text-5xl">
           <Accented text={profile.headline} />
         </p>
 
-        <div className="reveal mt-6 grid max-w-4xl gap-4 sm:grid-cols-2 sm:gap-6" style={{ '--reveal-delay': '260ms' }}>
+        <div className="mt-6 grid max-w-4xl gap-4 sm:grid-cols-2 sm:gap-6">
           {profile.pillars.map((pillar) => (
             <div key={pillar.label} className="relative pl-5">
               <span aria-hidden="true" className="absolute bottom-0.5 left-0 top-0.5 w-[3px] rounded-full bg-accent/60" />
@@ -100,7 +100,7 @@ export default function Hero() {
           ))}
         </div>
 
-        <ul className="reveal mt-7 flex flex-wrap gap-2" style={{ '--reveal-delay': '360ms' }}>
+        <ul className="mt-7 flex flex-wrap gap-2">
           {profile.interests.map((item) => (
             <li key={item} className="rounded-full bg-accent-soft px-3 py-1 text-sm font-medium text-accent">
               {item}
@@ -108,7 +108,7 @@ export default function Hero() {
           ))}
         </ul>
 
-        {/* No "reveal" class here on purpose: the buttons must be visible the moment the page loads */}
+        {/* Nothing in the hero uses "reveal": the first screen must show the moment the page loads */}
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <a
             href="#projects"

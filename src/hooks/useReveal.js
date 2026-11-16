@@ -8,10 +8,11 @@ export function useReveal() {
       els.forEach((el) => el.classList.add('is-visible'))
       return
     }
-    // Anything already on the first screen, or just below it, shows right away
+    // Anything already on the first screen, or just below it, shows right away with no fade,
+    // so the page never looks empty while an animation plays
     const firstScreen = window.innerHeight + 200
     els.forEach((el) => {
-      if (el.getBoundingClientRect().top < firstScreen) el.classList.add('is-visible')
+      if (el.getBoundingClientRect().top < firstScreen) el.classList.add('is-visible', 'instant')
     })
     const io = new IntersectionObserver(
       (entries) => {
