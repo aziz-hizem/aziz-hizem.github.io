@@ -5,11 +5,11 @@ export const profile = {
   roleNote: null, // optional small line under the role, e.g. 'Engineering Degree, 2027'
   // Putting [[double brackets]] around text  gives it the gradient effect.
   // The big line under your name
-  headline: 'I [[automate]] things to make life easier.',
-  // The two short lines under it: same idea, two worlds
+  headline: 'I [[create and automate]] things to make life easier.',
+  // The two short lines under it: same idea, two worlds (the first one shows on the left)
   pillars: [
-    { label: 'Machines', text: 'Industrial computing & automation, where systems run on their own.' },
     { label: 'Software', text: 'AI that does the heavy lifting, and cloud pipelines that build, test and deploy code by themselves.' },
+    { label: 'Machines', text: 'Industrial computing & automation, where systems run on their own.' },
   ],
   availability: {
     label: 'Open to internships',
