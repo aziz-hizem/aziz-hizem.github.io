@@ -30,7 +30,8 @@ git push
 ## Where everything lives
 
 ```
-├── index.html                  Page title, description, link-preview text, Google Fonts
+├── index.html                  Page title, description, link-preview text and image, Google Fonts
+├── tools/                      og-image.html + render script for the link-preview picture
 ├── src/
 │   ├── data/
 │   │   ├── profile.js          ← name, headline, availability, links, skills
@@ -164,6 +165,19 @@ python -c "from PIL import Image; Image.open('public/profile.png').convert('RGB'
 
 The circular shape, ring and glow come from the CSS. The ring colours are set in `Portrait` in
 `Hero.jsx`.
+
+### The link preview picture
+
+When the link is shared (LinkedIn, email, WhatsApp...), apps show `public/og-image.png`, a
+1200 × 630 picture. It is generated from [`tools/og-image.html`](tools/og-image.html): edit that
+page, then re-render it with the Edge browser already on Windows:
+
+```bash
+python tools/render_og_image.py
+```
+
+LinkedIn caches previews; after a change, paste the link into
+https://www.linkedin.com/post-inspector/ to refresh it.
 
 ### Change the colors
 

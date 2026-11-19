@@ -61,6 +61,6 @@ export const skills = [
   },
   {
     group: 'Languages',
-    items: ['English (bilingual)', 'French (bilingual)', 'Arabic (native)', 'German (basic)'],
+    items: ['English (bilingual)', 'French (bilingual)', 'Arabic (native)'],
   },
 ]
