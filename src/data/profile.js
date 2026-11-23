@@ -7,7 +7,7 @@ export const profile = {
   // The big line under your name
   headline: 'I [[create and automate]] things to make life easier.',
   // The line under it: what you actually do
-  subline: 'AI tools, DevOps practices and cloud experience, put to work on tools that save time and add real value.',
+  subline: 'AI tools, DevOps practices and cloud experience, put to work on solutions that save time and add real value.',
   availability: {
     label: 'Open to internships',
     detail: 'End-of-studies internship, 5–6 months, starting February 2027',
