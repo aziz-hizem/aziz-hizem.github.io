@@ -66,8 +66,7 @@ git push
 ### Change your headline, role or availability
 
 [`src/data/profile.js`](src/data/profile.js), at the top. They are plain strings, so just rewrite
-them. `headline` is the big line under your name; `pillars` are the two short labelled lines
-below it (add or remove entries freely). To colour some words, see the next section.
+them. `headline` is the big line under your name; `subline` is the sentence below it. To colour some words, see the next section.
 
 ### Highlight words with the gradient
 
@@ -80,7 +79,7 @@ headline: 'I [[automate]] things to make life easier.',
 
 Use as many as you like, in any of these text fields:
 
-- **`src/data/profile.js`**: `role`, `roleNote`, `headline`, `pillars` text, `availability.detail`
+- **`src/data/profile.js`**: `role`, `roleNote`, `headline`, `subline`, `availability.detail`
 - **`src/data/projects.js`**: `tagline`, `description`, `highlights`, `summary`, `works`, `roadmap`
 - section `title` and `intro` passed to `<Section>` in the components
 

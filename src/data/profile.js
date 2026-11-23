@@ -6,11 +6,8 @@ export const profile = {
   // Putting [[double brackets]] around text  gives it the gradient effect.
   // The big line under your name
   headline: 'I [[create and automate]] things to make life easier.',
-  // The two short lines under it: same idea, two worlds (the first one shows on the left)
-  pillars: [
-    { label: 'Software', text: 'AI that does the heavy lifting, and cloud pipelines that build, test and deploy code by themselves.' },
-    { label: 'Machines', text: 'Industrial computing & automation, where systems run on their own.' },
-  ],
+  // The line under it: what you actually do
+  subline: 'I build software where AI does the heavy lifting, and pipelines that build, test and deploy code on their own.',
   availability: {
     label: 'Open to internships',
     detail: 'End-of-studies internship, 5–6 months, starting February 2027',

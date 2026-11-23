@@ -88,17 +88,9 @@ export default function Hero() {
           <Accented text={profile.headline} />
         </p>
 
-        <div className="mt-6 grid max-w-4xl gap-4 sm:grid-cols-2 sm:gap-6">
-          {profile.pillars.map((pillar) => (
-            <div key={pillar.label} className="relative pl-5">
-              <span aria-hidden="true" className="absolute bottom-0.5 left-0 top-0.5 w-[3px] rounded-full bg-accent/60" />
-              <p className="text-lg font-semibold text-accent">{pillar.label}</p>
-              <p className="mt-1.5 leading-relaxed text-muted">
-                <Accented text={pillar.text} />
-              </p>
-            </div>
-          ))}
-        </div>
+        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted sm:text-xl">
+          <Accented text={profile.subline} />
+        </p>
 
         <ul className="mt-7 flex flex-wrap gap-2">
           {profile.interests.map((item) => (
