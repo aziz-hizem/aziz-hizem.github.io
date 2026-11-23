@@ -60,11 +60,11 @@ export const featured = [
     description:
       'An LLM turns each question into SQL, the query runs read-only against a database of every season from 1950 to 2024, and the rows are turned back into a conversational answer. React chat UI on a FastAPI backend.',
     highlights: [
-      'Text-to-SQL with schema and few-shot prompting on Llama 3.1 (Groq)',
+      'Text-to-SQL with schema and few-shot prompting: a small model writes the SQL, a larger one the answer',
       'Safe execution: only SELECT statements run, on a database opened read-only',
       'React chat UI with 11 switchable team themes',
     ],
-    stack: ['React', 'FastAPI', 'SQLite', 'Groq API', 'Llama 3.1'],
+    stack: ['React', 'FastAPI', 'SQLite', 'Groq API', 'GPT-OSS'],
     links: [{ label: 'Repository', href: gh('f1-chatbot') }],
   },
   {
