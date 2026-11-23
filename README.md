@@ -31,7 +31,7 @@ git push
 
 ```
 ├── index.html                  Page title, description, link-preview text and image, Google Fonts
-├── tools/                      og-image.html + render script for the link-preview picture
+├── tools/                      HTML sources for generated images (link preview, Shakedown diagram) and their render scripts
 ├── src/
 │   ├── data/
 │   │   ├── profile.js          ← name, headline, availability, links, skills
@@ -116,7 +116,7 @@ the shape of an existing one.
 |---|---|---|
 | `featured` | The large cards | `title`, `area`, `image`, `tagline`, `description`, `highlights`, `stack`, `links` |
 | `current` | The "Currently building" block | plus `status`, `works`, `roadmap`, `exploration` |
-| `more` | The small cards | `title`, `summary`, `stack`, `links` |
+| `more` | The small cards | `title`, `summary`, `stack`, `links`, optional `note` (e.g. 'Private repository' when `links` is empty) |
 
 - **Reorder projects**: move an entry up or down in the list. The numbers (01, 02…) follow automatically.
 - **Promote a project** from `more` to `featured`: move it and fill in the missing fields.

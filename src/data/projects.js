@@ -99,31 +99,49 @@ export const featured = [
 
 // Work in progress, shown on its own.
 export const current = {
-  id: 'cinecasa',
-  title: 'Cinecasa',
+  id: 'shakedown',
+  title: 'Shakedown',
   status: 'In progress',
-  image: '/projects/cinecasa.webp',
-  tagline: 'A home cinema app that turns local movie and TV folders into a streaming-style library.',
+  image: '/projects/shakedown.webp',
+  tagline: 'Test-deploy every pull request before it is merged.',
   description:
-    'Scans your drives, matches every file on TMDB and shows posters, ratings, cast and episodes. Playback runs in MPC-HC while Cinecasa follows your progress and brings you back to the exact second you stopped.',
+    'A GitHub Action that builds both the pull request and the main branch, runs them side by side in CI and tells the reviewer what the change does once it is packaged and running: does it still start, how fast, how much memory, how big the image is and which vulnerabilities it adds. Serious regressions block the merge, with a maintainer override.',
   works: [
-    'Automatic library: filename parsing, TMDB matching and a local artwork cache',
-    'Exact resume by tracking the MPC-HC player position, and auto-play of the next episode',
-    'Continue Watching rows, search, and themed Specials hubs',
-    'Manual fixes: correct a wrong match, edit episode metadata and lock it against rescans',
+    'Installable command-line tool, the same one that will run in CI',
+    'Builds main and the pull request straight from git history and compares them',
+    'Markdown report, plus a merge gate through exit codes (pass, regression, misconfigured)',
+    'A sample app that shows the point: dropping "-slim" from one base image makes it 9× bigger',
   ],
   roadmap: [
-    'Package a Windows installer and publish it as a release',
-    'Support a second player besides MPC-HC',
-    'Filters and sorting in the library view',
-    'Remember subtitle and audio track choices per show',
+    'GitHub Action that runs on every pull request and posts the report as a comment',
+    'Test-deploy both versions in a temporary Kubernetes cluster (kind)',
+    'Startup time, memory and Linux image checks (added packages, running as root)',
+    'Vulnerability comparison with Trivy',
+    'Results on real pull requests from open-source projects',
   ],
-  stack: ['Electron', 'React', 'TypeScript', 'SQLite', 'Tailwind CSS', 'TMDB API'],
-  links: [{ label: 'Repository', href: gh('cinecasa') }],
+  stack: ['Python', 'Docker', 'Git', 'GitHub Actions', 'Linux'],
+  links: [{ label: 'Repository', href: gh('shakedown') }],
 }
 
 // Everything else, one line each.
 export const more = [
+  {
+    id: 'job-application-studio',
+    title: 'Job Application Studio',
+    summary:
+      'Desktop app that runs a whole job hunt: tailored LaTeX cover letters and résumés, an application tracker with a dashboard, and LinkedIn outreach. Claude drafts the company-specific paragraph.',
+    stack: ['Python', 'FastAPI', 'React', 'LaTeX', 'Claude'],
+    links: [],
+    note: 'Private repository',
+  },
+  {
+    id: 'cinecasa',
+    title: 'Cinecasa',
+    summary:
+      'Home cinema desktop app that turns local movie and TV folders into a streaming-style library, with TMDB artwork and playback that resumes at the exact second you stopped.',
+    stack: ['Electron', 'React', 'TypeScript', 'SQLite', 'TMDB API'],
+    links: [{ label: 'Repository', href: gh('cinecasa') }],
+  },
   {
     id: 'spotify-chatbot',
     title: 'Spotify Chatbot',
@@ -159,27 +177,6 @@ export const more = [
     summary: 'Webcam face detection with a Tkinter GUI and an image CLI, built as the vision module for a robot.',
     stack: ['Python', 'OpenCV', 'dlib'],
     links: [{ label: 'Repository', href: gh('realtime-face-detection') }],
-  },
-  {
-    id: 'f1-racer',
-    title: 'F1 Racer',
-    summary: 'Retro NES-style top-down Formula 1 racing game with procedurally drawn pixel art.',
-    stack: ['Python', 'Pygame'],
-    links: [{ label: 'Repository', href: gh('f1-racer') }],
-  },
-  {
-    id: 'pixel-platformer',
-    title: 'Pixel Platformer',
-    summary: '2D pixel-art platformer with double jump, mask collisions, fire traps and switchable characters. Work in progress.',
-    stack: ['Python', 'Pygame'],
-    links: [{ label: 'Repository', href: gh('pixel-platformer') }],
-  },
-  {
-    id: 'easylife',
-    title: 'EasyLife',
-    summary: 'Responsive landing page prototype for a home cleaning service, built for a client. Work in progress.',
-    stack: ['React', 'Tailwind CSS', 'Framer Motion'],
-    links: [{ label: 'Repository', href: gh('easylife') }, { label: 'Live site', href: 'https://easylife-ten.vercel.app' }],
   },
   {
     id: 'arduino-joystick-controller',
