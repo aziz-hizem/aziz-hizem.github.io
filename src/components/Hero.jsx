@@ -161,7 +161,7 @@ export default function Hero() {
           <a href={`mailto:${links.email}`} className={secondary}>
             <MailIcon size={16} /> Email
           </a>
-          <CvButton className={secondary} />
+          <CvButton />
         </div>
       </div>
     </section>

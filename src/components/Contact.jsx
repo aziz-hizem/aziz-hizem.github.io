@@ -33,7 +33,7 @@ export default function Contact() {
             >
               <MailIcon size={16} /> {links.email}
             </a>
-            <CvButton className={secondary} />
+            <CvButton />
             <a href={links.linkedin} target="_blank" rel="noreferrer" className={secondary}>
               <LinkedInIcon size={16} /> LinkedIn
             </a>

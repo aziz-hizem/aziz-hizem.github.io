@@ -23,7 +23,7 @@ export const profile = {
 export const skills = [
   {
     group: 'Cloud & Infrastructure',
-    items: ['AWS (Lambda, S3, DynamoDB, API Gateway, CloudFront, ECR)', 'Azure (Container Apps, Container Registry, Azure SQL)', 'Terraform', 'Docker', 'Linux'],
+    items: ['AWS (Lambda, S3, DynamoDB, API Gateway, CloudFront, ECR)', 'Azure (Container Apps, Container Registry, Azure SQL)', 'Terraform', 'Docker', 'Kubernetes', 'Linux'],
   },
   {
     group: 'DevOps & CI/CD',
@@ -35,7 +35,6 @@ export const skills = [
       'LLM integration',
       'AWS Bedrock',
       'LangChain & LangGraph',
-      'Llama 3 (Groq)',
       'RAG',
       'NLP',
       'Object detection (YOLO11, Ultralytics)',

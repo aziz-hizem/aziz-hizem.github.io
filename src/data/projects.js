@@ -29,7 +29,9 @@ export const featured = [
     tagline: 'A full CI/CD pipeline on Azure, built during a DevOps internship at Nouvelair.',
     highlights: [
       'A [[quality gate]] that blocks bad code before it ships',
-      'Docker images promoted Dev → Staging → Production, infrastructure in [[Terraform]]',
+      'Secret, dependency and image scans: a vulnerable image never reaches the registry',
+      'One Docker image promoted Dev → Staging → Production, with a manual approval for Production',
+      'Infrastructure written in [[Terraform]], one database per environment',
     ],
     stack: ['Azure DevOps', 'Terraform', 'Docker', 'SonarQube', 'Gitleaks', 'Python', 'FastAPI', 'GitHub Actions'],
     links: [{ label: 'Repository', href: gh('azure-devops-cicd-pipeline') }],
@@ -44,6 +46,8 @@ export const featured = [
     tagline: 'Neural networks teach themselves to play an underwater Flappy Bird clone.',
     highlights: [
       '[[NEAT neuroevolution]]: 50 fish per generation, the network structure evolves',
+      'Each fish sees three inputs: its height and the distances to the next pipes',
+      'Scored on survival and pipes passed; the fittest breed the next generation',
       'Playable by hand too, on the same game engine',
     ],
     stack: ['Python', 'Pygame', 'neat-python'],
@@ -103,17 +107,10 @@ export const current = {
   status: 'In progress',
   image: '/projects/shakedown.webp',
   tagline: 'Test-deploy every pull request before it is merged.',
-  description:
-    'A GitHub Action that runs the pull request and main side by side and reports what the change does once running: startup, memory, image size, vulnerabilities. Serious regressions block the merge.',
-  works: [
-    'CLI that builds main and the pull request straight from git and compares them',
-    'Markdown report and a merge gate through exit codes',
-    'Demo: dropping "-slim" from one base image makes it [[9× bigger]]',
-  ],
-  roadmap: [
-    'GitHub Action posting the report on every pull request',
-    'Test-deploy both versions in a temporary [[Kubernetes]] cluster (kind)',
-    'Vulnerability comparison with Trivy',
+  description: 'A GitHub Action that compares a pull request with main once both are running.',
+  highlights: [
+    'Startup, memory, image size and vulnerabilities, side by side; serious regressions block the merge',
+    'Next step: test-deploys in a temporary [[Kubernetes]] cluster',
   ],
   stack: ['Python', 'Docker', 'Kubernetes (kind)', 'Git', 'GitHub Actions', 'Linux'],
   links: [{ label: 'Repository', href: gh('shakedown') }],
@@ -130,18 +127,11 @@ export const more = [
     links: [{ label: 'Repository', href: gh('cinecasa') }],
   },
   {
-    id: 'astar-pathfinding-visualizer',
-    title: 'A* Pathfinding Visualizer',
-    summary: 'Interactive maze editor that shows the A* search algorithm exploring the grid step by step, written from scratch without a pathfinding library.',
-    stack: ['Python', 'Pygame', 'Tkinter'],
-    links: [{ label: 'Repository', href: gh('astar-pathfinding-visualizer') }],
-  },
-  {
-    id: 'memory-monitor',
-    title: 'Memory Monitor',
-    summary: 'Tiny Windows tray app (~10 MB) that logs RAM usage to CSV to find out how much memory you really need.',
-    stack: ['C#', '.NET 8', 'Win32'],
-    links: [{ label: 'Repository', href: gh('memory-monitor') }, { label: 'Download', href: `${gh('memory-monitor')}/releases/latest` }],
+    id: 'realtime-face-detection',
+    title: 'Real-time Face Detection',
+    summary: 'Webcam face detection with a Tkinter GUI and an image CLI, built as the vision module for a robot.',
+    stack: ['Python', 'OpenCV', 'dlib'],
+    links: [{ label: 'Repository', href: gh('realtime-face-detection') }],
   },
   {
     id: 'clipsync',
@@ -151,6 +141,13 @@ export const more = [
     links: [{ label: 'Repository', href: gh('clipsync') }, { label: 'Download', href: `${gh('clipsync')}/releases/latest` }],
   },
   {
+    id: 'memory-monitor',
+    title: 'Memory Monitor',
+    summary: 'Tiny Windows tray app (~10 MB) that logs RAM usage to CSV to find out how much memory you really need.',
+    stack: ['C#', '.NET 8', 'Win32'],
+    links: [{ label: 'Repository', href: gh('memory-monitor') }, { label: 'Download', href: `${gh('memory-monitor')}/releases/latest` }],
+  },
+  {
     id: 'proxiwash-dryer-notifier',
     title: 'ProxiWash Dryer Notifier',
     summary: 'Watches a residence laundry dryer on the ProxiWash website with Selenium and alerts you when the cycle ends.',
@@ -158,11 +155,11 @@ export const more = [
     links: [{ label: 'Repository', href: gh('proxiwash-dryer-notifier') }, { label: 'Download', href: `${gh('proxiwash-dryer-notifier')}/releases/latest` }],
   },
   {
-    id: 'realtime-face-detection',
-    title: 'Real-time Face Detection',
-    summary: 'Webcam face detection with a Tkinter GUI and an image CLI, built as the vision module for a robot.',
-    stack: ['Python', 'OpenCV', 'dlib'],
-    links: [{ label: 'Repository', href: gh('realtime-face-detection') }],
+    id: 'astar-pathfinding-visualizer',
+    title: 'A* Pathfinding Visualizer',
+    summary: 'Interactive maze editor that shows the A* search algorithm exploring the grid step by step, written from scratch without a pathfinding library.',
+    stack: ['Python', 'Pygame', 'Tkinter'],
+    links: [{ label: 'Repository', href: gh('astar-pathfinding-visualizer') }],
   },
   {
     id: 'arduino-joystick-controller',
