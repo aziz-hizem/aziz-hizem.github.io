@@ -104,9 +104,21 @@ export default function Hero() {
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <a
             href="#projects"
-            className="inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(61,208,196,0.7)]"
+            className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(61,208,196,0.7)]"
           >
             See my work
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.4"
+              aria-hidden="true"
+              className="transition-transform duration-300 group-hover:translate-y-0.5"
+            >
+              <path d="M12 5v14m0 0-6-6m6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </a>
           <a href={links.github} target="_blank" rel="noreferrer" className={secondary}>
             <GitHubIcon size={16} /> GitHub

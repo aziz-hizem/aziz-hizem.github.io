@@ -4,6 +4,7 @@ import Featured from './components/Featured'
 import Hero from './components/Hero'
 import More from './components/More'
 import Nav from './components/Nav'
+import ScrollCue from './components/ScrollCue'
 import Skills from './components/Skills'
 import { useReveal } from './hooks/useReveal'
 
@@ -20,6 +21,7 @@ export default function App() {
         <Skills />
         <Contact />
       </main>
+      <ScrollCue />
     </>
   )
 }
