@@ -68,9 +68,11 @@ function ProjectCard({ project, index }) {
         <p className="mt-3 text-lg leading-snug text-ink/90">
           <Accented text={project.tagline} />
         </p>
-        <p className="mt-3 text-[15px] leading-relaxed text-muted">
-          <Accented text={project.description} />
-        </p>
+        {project.description && (
+          <p className="mt-3 text-[15px] leading-relaxed text-muted">
+            <Accented text={project.description} />
+          </p>
+        )}
 
         <ul className="mt-4 space-y-2 text-sm text-muted">
           {project.highlights.map((h) => (
