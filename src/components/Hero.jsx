@@ -1,4 +1,5 @@
 import { profile } from '../data/profile'
+import { projectMap } from '../data/projects'
 import CvButton from './CvButton'
 import { Accented, GitHubIcon, LinkedInIcon, MailIcon } from './ui'
 
@@ -92,13 +93,39 @@ export default function Hero() {
           <Accented text={profile.subline} />
         </p>
 
-        <ul className="mt-7 flex flex-wrap gap-2">
-          {profile.interests.map((item) => (
-            <li key={item} className="rounded-full bg-accent-soft px-3 py-1 text-sm font-medium text-accent">
-              {item}
-            </li>
+        {/* Project map: each field with its projects, every name jumps to its card */}
+        <nav aria-label="Projects by field" className="mt-8 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3">
+          {projectMap.map((g) => (
+            <div key={g.group} className="relative pl-4">
+              <span aria-hidden="true" className="absolute bottom-0.5 left-0 top-0.5 w-[3px] rounded-full bg-accent/60" />
+              <p className="text-sm font-semibold text-accent">{g.group}</p>
+              <ul className="mt-2 space-y-1">
+                {g.items.map(([name, id]) => (
+                  <li key={id}>
+                    <a
+                      href={`#${id}`}
+                      className="group inline-flex items-center gap-1.5 text-[15px] text-ink/85 transition-colors hover:text-ink"
+                    >
+                      {name}
+                      <svg
+                        width="13"
+                        height="13"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.4"
+                        aria-hidden="true"
+                        className="text-dim transition-all duration-300 group-hover:translate-y-0.5 group-hover:text-accent"
+                      >
+                        <path d="M12 5v14m0 0-6-6m6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           ))}
-        </ul>
+        </nav>
 
         {/* Nothing in the hero uses "reveal": the first screen must show the moment the page loads */}
         <div className="mt-10 flex flex-wrap items-center gap-3">

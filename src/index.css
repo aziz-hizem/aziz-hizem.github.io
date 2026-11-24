@@ -150,9 +150,24 @@ section[id] {
   50% { transform: translateY(3px); }
 }
 
-/* "Next" pill on each project card: the arrow bobs while hovered */
-.next-arrow:hover svg {
-  animation: scroll-bob 1.2s ease-in-out infinite;
+/* "Next" connector between project cards: a light flows down the line */
+.flow-line {
+  position: relative;
+  overflow: hidden;
+}
+.flow-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -45%;
+  height: 45%;
+  border-radius: 999px;
+  background: linear-gradient(to bottom, transparent, var(--color-accent));
+  animation: flow-down 1.5s ease-in infinite;
+}
+@keyframes flow-down {
+  to { top: 100%; }
 }
 
 /* Card hover glow */

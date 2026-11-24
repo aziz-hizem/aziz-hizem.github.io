@@ -188,9 +188,9 @@ export const more = [
   },
 ]
 
-// The row of links under the "Projects" heading: every field at a glance, each name jumps to its card.
+// Shown in the first screen: each field with its projects; every name jumps to its card.
 export const projectMap = [
-  { group: 'AI & ML', items: [['F1 Chatbot', 'f1-chatbot'], ['Flappy Fish', 'flappy-fish-neat-ai'], ['Spotify Chatbot', 'spotify-chatbot']] },
+  { group: 'Artificial Intelligence', items: [['F1 Chatbot', 'f1-chatbot'], ['Flappy Fish', 'flappy-fish-neat-ai'], ['Spotify Chatbot', 'spotify-chatbot']] },
   { group: 'DevOps & Cloud', items: [['Azure Pipeline', 'azure-devops-cicd-pipeline'], ['Shakedown', 'now']] },
-  { group: 'Computer Vision', items: [['SpiderBot', 'spiderbot-rust-detection'], ['Pill Classifier', 'pill-blister-classifier']] },
+  { group: 'Computing & Automation', items: [['SpiderBot', 'spiderbot-rust-detection'], ['Pill Classifier', 'pill-blister-classifier']] },
 ]
