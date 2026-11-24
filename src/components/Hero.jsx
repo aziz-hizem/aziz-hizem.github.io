@@ -64,7 +64,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-6xl 2xl:max-w-7xl px-5 pb-20 pt-16 sm:px-8 sm:pt-20">
+      <div className="relative mx-auto w-full max-w-6xl px-5 pb-20 pt-10 sm:px-8 sm:pt-10">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-center sm:gap-10">
           <Portrait />
           <div>
@@ -85,20 +85,20 @@ export default function Hero() {
           </div>
         </div>
 
-        <p className="mt-10 font-display text-3xl font-bold leading-tight sm:text-5xl">
+        <p className="mt-8 font-display text-3xl font-bold leading-tight sm:text-5xl">
           <Accented text={profile.headline} />
         </p>
 
-        <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted sm:text-xl">
+        <p className="mt-2.5 max-w-3xl text-lg leading-relaxed text-muted sm:text-xl">
           <Accented text={profile.subline} />
         </p>
 
         {/* Project map: each field with its projects, every name jumps to its card */}
-        <nav aria-label="Projects by field" className="mt-7 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3">
+        <nav aria-label="Projects by field" className="mt-6 grid max-w-4xl grid-cols-2 gap-x-6 gap-y-6 sm:grid-cols-3">
           {projectMap.map((g) => (
             <div key={g.group} className="relative pl-4">
               <span aria-hidden="true" className="absolute bottom-0.5 left-0 top-0.5 w-[3px] rounded-full bg-accent/60" />
-              <p className="text-sm font-semibold text-accent">{g.group}</p>
+              <p className="inline-block rounded-full bg-accent-soft px-3 py-1 text-sm font-semibold text-accent">{g.group}</p>
               <ul className="mt-2 space-y-1">
                 {g.items.map(([name, id]) => (
                   <li key={id}>
@@ -128,7 +128,7 @@ export default function Hero() {
         </nav>
 
         {/* Nothing in the hero uses "reveal": the first screen must show the moment the page loads */}
-        <div className="mt-8 flex flex-wrap items-center gap-3">
+        <div className="mt-7 flex flex-wrap items-center gap-3">
           <a
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-ink transition-all hover:brightness-110 hover:shadow-[0_8px_30px_-10px_rgba(61,208,196,0.7)]"

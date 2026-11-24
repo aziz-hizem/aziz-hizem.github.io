@@ -15,7 +15,7 @@ export function Accented({ text }) {
 
 export function Section({ id, number, eyebrow, title, intro, children }) {
   return (
-    <section id={id} className="mx-auto w-full max-w-6xl 2xl:max-w-7xl px-5 py-24 sm:px-8">
+    <section id={id} className="mx-auto w-full max-w-6xl px-5 py-24 sm:px-8">
       <header className="reveal mb-12 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div className="max-w-2xl">
           <p className="label mb-3 flex items-center gap-3 text-accent">

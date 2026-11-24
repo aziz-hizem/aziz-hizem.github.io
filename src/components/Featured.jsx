@@ -109,21 +109,25 @@ export default function Featured() {
       title="Projects"
       intro="From AI chatbots to delivery pipelines and computer vision on real hardware. Each one is documented and runnable from its repository."
     >
-      {/* On laptops and wider: a narrow column on the left holds each card's "Next" connector */}
-      <div className="space-y-6 lg:space-y-10">
-        {featured.map((p, i) => (
-          <div key={p.id} className="lg:grid lg:grid-cols-[8.5rem_minmax(0,1fr)] lg:gap-6 xl:grid-cols-[9.5rem_minmax(0,1fr)] xl:gap-8">
-            <div className="lg:order-2">
+      {/* Cards are centered and slightly narrower than the page, leaving room on the left for
+          each card's "Next" connector, which sits at the card's vertical middle. On screens
+          narrower than a laptop, the connector goes under the card instead. */}
+      <div className="mx-auto max-w-[60rem] space-y-10">
+        {featured.map((p, i) => {
+          // the last featured card leads to the project in progress
+          const next = featured[i + 1] ?? { id: 'now', title: current.title, short: current.title, field: 'Currently building' }
+          return (
+            <div key={p.id} className="relative">
               <ProjectCard project={p} index={i} />
+              <div className="absolute right-full top-1/2 mr-5 hidden w-[7.5rem] -translate-y-1/2 xl:block">
+                <NextConnector next={next} />
+              </div>
+              <div className="mt-6 w-40 pl-6 xl:hidden">
+                <NextConnector next={next} />
+              </div>
             </div>
-            <div className="mt-6 flex w-40 pl-6 lg:order-1 lg:mt-0 lg:w-auto lg:items-end lg:pl-0">
-              {/* the last featured card leads to the project in progress */}
-              <NextConnector
-                next={featured[i + 1] ?? { id: 'now', title: current.title, short: current.title, field: 'Currently building' }}
-              />
-            </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
     </Section>
   )
