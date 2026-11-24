@@ -9,7 +9,7 @@ const secondary =
 export default function Contact() {
   const { links, availability } = profile
   return (
-    <section id="contact" className="mx-auto w-full max-w-6xl px-5 pb-16 pt-8 sm:px-8">
+    <section id="contact" className="mx-auto w-full max-w-6xl 2xl:max-w-7xl px-5 pb-16 pt-8 sm:px-8">
       <div className="reveal relative rounded-3xl border border-line bg-surface p-8 sm:p-14">
         {/* Glow is clipped in its own layer, not on the card itself */}
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">

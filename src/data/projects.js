@@ -1,13 +1,14 @@
 const gh = (name) => `https://github.com/aziz-hizem/${name}`
 
 // Featured work, in page order: opens with the F1 chatbot, then alternates fields.
-// `field` is the short name shown on the arrow that points to a project.
+// `field` and `short` are shown on the 'Next' connector that points to a project.
 export const featured = [
   {
     id: 'f1-chatbot',
     title: 'F1 Chatbot',
     area: 'LLM · Full-stack',
     field: 'AI chatbot',
+    short: 'F1 Chatbot',
     image: '/projects/f1-chatbot.webp',
     tagline: 'Ask anything about Formula 1 history in plain English and get answers backed by real data.',
     description:
@@ -25,6 +26,7 @@ export const featured = [
     title: 'Azure DevOps CI/CD Pipeline',
     area: 'DevOps',
     field: 'DevOps & Cloud',
+    short: 'Azure Pipeline',
     image: '/projects/azure-devops-cicd-pipeline.webp',
     tallImage: true, // portrait diagram: narrower image column, capped height
     tagline: 'A complete software delivery pipeline on Azure, built during a two-month DevOps internship at Nouvelair (Tunisian airline).',
@@ -43,6 +45,7 @@ export const featured = [
     title: 'Flappy Fish NEAT ML',
     area: 'Machine Learning',
     field: 'Machine learning',
+    short: 'Flappy Fish',
     image: '/projects/flappy-fish-neat-ai.webp',
     tagline: 'An underwater Flappy Bird clone where neural networks teach themselves to play through neuroevolution.',
     description:
@@ -60,6 +63,7 @@ export const featured = [
     title: 'Spotify Chatbot',
     area: 'LLM · RAG',
     field: 'AI chatbot + RAG',
+    short: 'Spotify Chatbot',
     image: '/projects/spotify-chatbot.webp',
     tagline: 'Manage Spotify playlists by chatting in plain English, plus a RAG experiment that lets an LLM write code from the Spotify API docs.',
     description:
@@ -77,6 +81,7 @@ export const featured = [
     title: 'SpiderBot — Rust Detection',
     area: 'Computer Vision · Robotics',
     field: 'Computer vision',
+    short: 'SpiderBot',
     image: '/projects/spiderbot-rust-detection.webp',
     tagline: 'Real-time rust and corrosion detection for a spider robot that inspects metal surfaces.',
     description:
@@ -94,6 +99,7 @@ export const featured = [
     title: 'Pill Blister Classifier',
     area: 'Computer Vision',
     field: 'Computer vision',
+    short: 'Pill Classifier',
     image: '/projects/pill-blister-classifier.webp',
     tagline: 'Inspects pill blister packs with classical image processing: counts pills, detects empty cells and flags color anomalies.',
     description:

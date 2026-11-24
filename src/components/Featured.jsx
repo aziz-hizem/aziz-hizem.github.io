@@ -1,32 +1,30 @@
-import { Fragment } from 'react'
 import { current, featured } from '../data/projects'
 import { Accented, LinkButton, Section, Tag } from './ui'
 
-// Between two cards, on the left: "Next", a line with light flowing down it, a bobbing arrow,
-// then the name of the next project. Clicking it scrolls there.
+// Left of each card, at its bottom: "Next", a line with light flowing down it, a bobbing arrow,
+// then the next project's field and name on two lines. Clicking it scrolls there.
 function NextConnector({ next }) {
   return (
-    <div className="flex py-4 pl-6 sm:pl-12">
-      <a href={`#${next.id}`} aria-label={`Next: ${next.title}`} className="group flex flex-col items-center">
-        <span className="text-sm font-semibold text-ink/80 transition-colors group-hover:text-accent">Next</span>
-        <span aria-hidden="true" className="flow-line mt-2 block h-14 w-[2px] rounded-full bg-accent/25" />
-        <svg
-          width="22"
-          height="22"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2.6"
-          aria-hidden="true"
-          className="scroll-bob -mt-2 text-accent"
-        >
-          <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-        <span className="mt-1.5 rounded-full border border-accent/40 bg-surface px-4 py-1.5 text-sm font-medium text-ink shadow-[0_10px_30px_-14px_rgba(61,208,196,0.6)] transition-colors group-hover:border-accent">
-          <span className="text-accent">{next.field}</span> <span className="text-dim">·</span> {next.title}
-        </span>
-      </a>
-    </div>
+    <a href={`#${next.id}`} aria-label={`Next: ${next.title}`} className="group flex w-full flex-col items-center">
+      <span className="text-sm font-semibold text-ink/80 transition-colors group-hover:text-accent">Next</span>
+      <span aria-hidden="true" className="flow-line mt-2 block h-14 w-[2px] rounded-full bg-accent/25" />
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2.6"
+        aria-hidden="true"
+        className="scroll-bob -mt-2 text-accent"
+      >
+        <path d="m6 9 6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      <span className="mt-1.5 w-full rounded-2xl border border-accent/40 bg-surface px-2 py-2 text-center shadow-[0_10px_30px_-14px_rgba(61,208,196,0.6)] transition-colors group-hover:border-accent">
+        <span className="block text-xs font-semibold text-accent">{next.field}</span>
+        <span className="mt-0.5 block text-sm font-medium leading-snug text-ink">{next.short ?? next.title}</span>
+      </span>
+    </a>
   )
 }
 
@@ -111,13 +109,20 @@ export default function Featured() {
       title="Projects"
       intro="From AI chatbots to delivery pipelines and computer vision on real hardware. Each one is documented and runnable from its repository."
     >
-      <div>
+      {/* On laptops and wider: a narrow column on the left holds each card's "Next" connector */}
+      <div className="space-y-6 lg:space-y-10">
         {featured.map((p, i) => (
-          <Fragment key={p.id}>
-            <ProjectCard project={p} index={i} />
-            {/* the last featured card leads to the project in progress */}
-            <NextConnector next={featured[i + 1] ?? { id: 'now', title: current.title, field: 'Currently building' }} />
-          </Fragment>
+          <div key={p.id} className="lg:grid lg:grid-cols-[8.5rem_minmax(0,1fr)] lg:gap-6 xl:grid-cols-[9.5rem_minmax(0,1fr)] xl:gap-8">
+            <div className="lg:order-2">
+              <ProjectCard project={p} index={i} />
+            </div>
+            <div className="mt-6 flex w-40 pl-6 lg:order-1 lg:mt-0 lg:w-auto lg:items-end lg:pl-0">
+              {/* the last featured card leads to the project in progress */}
+              <NextConnector
+                next={featured[i + 1] ?? { id: 'now', title: current.title, short: current.title, field: 'Currently building' }}
+              />
+            </div>
+          </div>
         ))}
       </div>
     </Section>
