@@ -12,7 +12,7 @@ export const profile = {
     label: 'Open to internships',
     detail: 'End-of-studies internship, 5–6 months, starting February 2027',
   },
-  interests: ['Software Solutions', 'DevOps & Cloud', 'Artificial Intelligence', 'Computing & Automation'],
+  interests: ['Artificial Intelligence', 'DevOps & Cloud', 'Computing & Automation'],
   links: {
     github: 'https://github.com/aziz-hizem',
     linkedin: 'https://www.linkedin.com/in/azizhizem/',
