@@ -1,11 +1,30 @@
 const gh = (name) => `https://github.com/aziz-hizem/${name}`
 
-// Featured work, in priority order: DevOps first, then AI, then software.
+// Featured work, in page order: opens with the F1 chatbot, then alternates fields.
+// `field` is the short name shown on the arrow that points to a project.
 export const featured = [
+  {
+    id: 'f1-chatbot',
+    title: 'F1 Chatbot',
+    area: 'LLM · Full-stack',
+    field: 'AI chatbot',
+    image: '/projects/f1-chatbot.webp',
+    tagline: 'Ask anything about Formula 1 history in plain English and get answers backed by real data.',
+    description:
+      'An LLM turns each question into SQL, the query runs read-only against a database of every season from 1950 to 2024, and the rows are turned back into a conversational answer. React chat UI on a FastAPI backend.',
+    highlights: [
+      'Text-to-SQL with schema and few-shot prompting: a small model writes the SQL, a larger one the answer',
+      'Safe execution: only SELECT statements run, on a database opened read-only',
+      'React chat UI with 11 switchable team themes',
+    ],
+    stack: ['React', 'FastAPI', 'SQLite', 'Groq API', 'GPT-OSS'],
+    links: [{ label: 'Repository', href: gh('f1-chatbot') }],
+  },
   {
     id: 'azure-devops-cicd-pipeline',
     title: 'Azure DevOps CI/CD Pipeline',
     area: 'DevOps',
+    field: 'DevOps & Cloud',
     image: '/projects/azure-devops-cicd-pipeline.webp',
     tallImage: true, // portrait diagram: narrower image column, capped height
     tagline: 'A complete software delivery pipeline on Azure, built during a two-month DevOps internship at Nouvelair (Tunisian airline).',
@@ -20,57 +39,27 @@ export const featured = [
     links: [{ label: 'Repository', href: gh('azure-devops-cicd-pipeline') }],
   },
   {
-    id: 'pill-blister-classifier',
-    title: 'Pill Blister Classifier',
-    area: 'Computer Vision',
-    image: '/projects/pill-blister-classifier.webp',
-    tagline: 'Inspects pill blister packs with classical image processing: counts pills, detects empty cells and flags color anomalies.',
+    id: 'flappy-fish-neat-ai',
+    title: 'Flappy Fish NEAT ML',
+    area: 'Machine Learning',
+    field: 'Machine learning',
+    image: '/projects/flappy-fish-neat-ai.webp',
+    tagline: 'An underwater Flappy Bird clone where neural networks teach themselves to play through neuroevolution.',
     description:
-      'No machine learning involved: thresholding, morphology and watershed segmentation do the work, with a Tkinter debug UI that shows every pipeline step. A second version runs headless on a Raspberry Pi 5 and reports the result with LEDs and a servo.',
+      'Each fish is controlled by a small neural network. Generation after generation, NEAT keeps the networks that survive longest and mutates them, until one plays indefinitely. Playable by hand as well.',
     highlights: [
-      'Pill counting and per-pill color labeling',
-      'Empty-cell and color-anomaly detection',
-      'Desktop debug app and Raspberry Pi 5 hardware version',
+      'NEAT neuroevolution with neat-python: 50 fish per generation, network structure evolves from zero hidden neurons',
+      'Shared game module for human play and training',
+      'Fitness, species and best genome reported every generation',
     ],
-    stack: ['Python', 'OpenCV', 'NumPy', 'Tkinter', 'Raspberry Pi 5'],
-    links: [{ label: 'Repository', href: gh('pill-blister-classifier') }],
-  },
-  {
-    id: 'spiderbot-rust-detection',
-    title: 'SpiderBot — Rust Detection',
-    area: 'Computer Vision · Robotics',
-    image: '/projects/spiderbot-rust-detection.webp',
-    tagline: 'Real-time rust and corrosion detection for a spider robot that inspects metal surfaces.',
-    description:
-      'Three YOLO models trained and compared on public corrosion datasets (up to 14k images). The best one runs live on the robot: a Raspberry Pi camera streams over Wi-Fi to a PC that draws the detections and counts affected regions.',
-    highlights: [
-      'YOLOv8n → YOLO11n → YOLO11s, documented with training curves and confusion matrices',
-      'Live detection on the robot camera stream, tested end to end',
-      'Annotated video recording for inspection reports',
-    ],
-    stack: ['Python', 'Ultralytics YOLO', 'OpenCV', 'Raspberry Pi', 'Roboflow datasets'],
-    links: [{ label: 'Repository', href: gh('spiderbot-rust-detection') }],
-  },
-  {
-    id: 'f1-chatbot',
-    title: 'F1 Chatbot',
-    area: 'LLM · Full-stack',
-    image: '/projects/f1-chatbot.webp',
-    tagline: 'Ask anything about Formula 1 history in plain English and get answers backed by real data.',
-    description:
-      'An LLM turns each question into SQL, the query runs read-only against a database of every season from 1950 to 2024, and the rows are turned back into a conversational answer. React chat UI on a FastAPI backend.',
-    highlights: [
-      'Text-to-SQL with schema and few-shot prompting: a small model writes the SQL, a larger one the answer',
-      'Safe execution: only SELECT statements run, on a database opened read-only',
-      'React chat UI with 11 switchable team themes',
-    ],
-    stack: ['React', 'FastAPI', 'SQLite', 'Groq API', 'GPT-OSS'],
-    links: [{ label: 'Repository', href: gh('f1-chatbot') }],
+    stack: ['Python', 'Pygame', 'neat-python'],
+    links: [{ label: 'Repository', href: gh('flappy-fish-neat-ai') }],
   },
   {
     id: 'spotify-chatbot',
     title: 'Spotify Chatbot',
     area: 'LLM · RAG',
+    field: 'AI chatbot + RAG',
     image: '/projects/spotify-chatbot.webp',
     tagline: 'Manage Spotify playlists by chatting in plain English, plus a RAG experiment that lets an LLM write code from the Spotify API docs.',
     description:
@@ -84,20 +73,38 @@ export const featured = [
     links: [{ label: 'Repository', href: gh('spotify-chatbot') }],
   },
   {
-    id: 'flappy-fish-neat-ai',
-    title: 'Flappy Fish NEAT AI',
-    area: 'Machine Learning',
-    image: '/projects/flappy-fish-neat-ai.webp',
-    tagline: 'An underwater Flappy Bird clone where neural networks teach themselves to play through neuroevolution.',
+    id: 'spiderbot-rust-detection',
+    title: 'SpiderBot — Rust Detection',
+    area: 'Computer Vision · Robotics',
+    field: 'Computer vision',
+    image: '/projects/spiderbot-rust-detection.webp',
+    tagline: 'Real-time rust and corrosion detection for a spider robot that inspects metal surfaces.',
     description:
-      'Each fish is controlled by a small neural network. Generation after generation, NEAT keeps the networks that survive longest and mutates them, until one plays indefinitely. Playable by hand as well.',
+      'Three YOLO models trained and compared on public corrosion datasets (up to 14k images). The best one runs live on the robot: a Raspberry Pi camera streams over Wi-Fi to a PC that draws the detections and counts affected regions.',
     highlights: [
-      'NEAT neuroevolution with neat-python: 50 fish per generation, network structure evolves from zero hidden neurons',
-      'Shared game module for human play and training',
-      'Fitness, species and best genome reported every generation',
+      'YOLOv8n → YOLO11n → YOLO11s, documented with training curves and confusion matrices',
+      'Live detection on the robot camera stream, tested end to end',
+      'Annotated video recording for inspection reports',
     ],
-    stack: ['Python', 'Pygame', 'neat-python'],
-    links: [{ label: 'Repository', href: gh('flappy-fish-neat-ai') }],
+    stack: ['Python', 'Ultralytics YOLO', 'OpenCV', 'Raspberry Pi', 'Roboflow datasets'],
+    links: [{ label: 'Repository', href: gh('spiderbot-rust-detection') }],
+  },
+  {
+    id: 'pill-blister-classifier',
+    title: 'Pill Blister Classifier',
+    area: 'Computer Vision',
+    field: 'Computer vision',
+    image: '/projects/pill-blister-classifier.webp',
+    tagline: 'Inspects pill blister packs with classical image processing: counts pills, detects empty cells and flags color anomalies.',
+    description:
+      'No machine learning involved: thresholding, morphology and watershed segmentation do the work, with a Tkinter debug UI that shows every pipeline step. A second version runs headless on a Raspberry Pi 5 and reports the result with LEDs and a servo.',
+    highlights: [
+      'Pill counting and per-pill color labeling',
+      'Empty-cell and color-anomaly detection',
+      'Desktop debug app and Raspberry Pi 5 hardware version',
+    ],
+    stack: ['Python', 'OpenCV', 'NumPy', 'Tkinter', 'Raspberry Pi 5'],
+    links: [{ label: 'Repository', href: gh('pill-blister-classifier') }],
   },
 ]
 
@@ -179,4 +186,11 @@ export const more = [
     stack: ['Arduino', 'Python', 'vJoy', 'AutoHotkey'],
     links: [{ label: 'Repository', href: gh('Arduino-Joystick-Controller-and-Mouse-Steering') }],
   },
+]
+
+// The row of links under the "Projects" heading: every field at a glance, each name jumps to its card.
+export const projectMap = [
+  { group: 'AI & ML', items: [['F1 Chatbot', 'f1-chatbot'], ['Flappy Fish', 'flappy-fish-neat-ai'], ['Spotify Chatbot', 'spotify-chatbot']] },
+  { group: 'DevOps & Cloud', items: [['Azure Pipeline', 'azure-devops-cicd-pipeline'], ['Shakedown', 'now']] },
+  { group: 'Computer Vision', items: [['SpiderBot', 'spiderbot-rust-detection'], ['Pill Classifier', 'pill-blister-classifier']] },
 ]

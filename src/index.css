@@ -150,6 +150,11 @@ section[id] {
   50% { transform: translateY(3px); }
 }
 
+/* "Next" pill on each project card: the arrow bobs while hovered */
+.next-arrow:hover svg {
+  animation: scroll-bob 1.2s ease-in-out infinite;
+}
+
 /* Card hover glow */
 .card {
   position: relative;
