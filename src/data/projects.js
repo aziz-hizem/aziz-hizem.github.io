@@ -68,16 +68,20 @@ export const featured = [
     links: [{ label: 'Repository', href: gh('f1-chatbot') }],
   },
   {
-    id: 'astar-pathfinding-visualizer',
-    title: 'A* Pathfinding Visualizer',
-    area: 'Algorithms',
-    image: '/projects/astar-pathfinding-visualizer.webp',
-    tagline: 'An interactive maze editor that shows the A* search algorithm exploring the grid step by step.',
+    id: 'spotify-chatbot',
+    title: 'Spotify Chatbot',
+    area: 'LLM · RAG',
+    image: '/projects/spotify-chatbot.webp',
+    tagline: 'Manage Spotify playlists by chatting in plain English, plus a RAG experiment that lets an LLM write code from the Spotify API docs.',
     description:
-      'A* implemented from scratch as a stepwise class so the UI can render the frontier, the explored set and the current node after every expansion. Draw walls, run the search animated or one step at a time, save mazes as JSON.',
-    highlights: ['A* with Manhattan heuristic, written without any pathfinding library', 'Step-by-step mode and speed control', 'Pygame canvas embedded in a Tkinter window'],
-    stack: ['Python', 'Pygame', 'Tkinter'],
-    links: [{ label: 'Repository', href: gh('astar-pathfinding-visualizer') }],
+      'The chat app turns a request like "add Blinding Lights to my Road Trip playlist" into a strict JSON intent, which a FastAPI backend runs on the Spotify Web API. The RAG experiment goes further: the API reference is scraped and embedded into a vector store, and the endpoints most relevant to a request are retrieved so the model can write code for actions nobody coded by hand.',
+    highlights: [
+      'Retrieval-augmented generation (experimental): Playwright scraper, Sentence Transformers embeddings, ChromaDB retrieval of the top 5 endpoints',
+      'Retrieved docs fed into a Jinja2 prompt so the LLM generates the Python for the request',
+      'Chat app: few-shot intent extraction in JSON mode, OAuth refresh-token flow, batch track adding',
+    ],
+    stack: ['Python', 'FastAPI', 'React', 'Groq API', 'ChromaDB', 'Sentence Transformers', 'Spotify Web API'],
+    links: [{ label: 'Repository', href: gh('spotify-chatbot') }],
   },
   {
     id: 'flappy-fish-neat-ai',
@@ -119,21 +123,12 @@ export const current = {
     'Vulnerability comparison with Trivy',
     'Results on real pull requests from open-source projects',
   ],
-  stack: ['Python', 'Docker', 'Git', 'GitHub Actions', 'Linux'],
+  stack: ['Python', 'Docker', 'Kubernetes (kind)', 'Git', 'GitHub Actions', 'Linux'],
   links: [{ label: 'Repository', href: gh('shakedown') }],
 }
 
 // Everything else, one line each.
 export const more = [
-  {
-    id: 'job-application-studio',
-    title: 'Job Application Studio',
-    summary:
-      'Desktop app that runs a whole job hunt: tailored LaTeX cover letters and résumés, an application tracker with a dashboard, and LinkedIn outreach. Claude drafts the company-specific paragraph.',
-    stack: ['Python', 'FastAPI', 'React', 'LaTeX', 'Claude'],
-    links: [],
-    note: 'Private repository',
-  },
   {
     id: 'cinecasa',
     title: 'Cinecasa',
@@ -143,12 +138,11 @@ export const more = [
     links: [{ label: 'Repository', href: gh('cinecasa') }],
   },
   {
-    id: 'spotify-chatbot',
-    title: 'Spotify Chatbot',
-    summary:
-      'Manage Spotify playlists by chatting in plain English: an LLM turns each request into a JSON intent that a FastAPI backend runs on the Spotify Web API.',
-    stack: ['React', 'FastAPI', 'Groq API', 'Spotify Web API'],
-    links: [{ label: 'Repository', href: gh('spotify-chatbot') }],
+    id: 'astar-pathfinding-visualizer',
+    title: 'A* Pathfinding Visualizer',
+    summary: 'Interactive maze editor that shows the A* search algorithm exploring the grid step by step, written from scratch without a pathfinding library.',
+    stack: ['Python', 'Pygame', 'Tkinter'],
+    links: [{ label: 'Repository', href: gh('astar-pathfinding-visualizer') }],
   },
   {
     id: 'memory-monitor',
