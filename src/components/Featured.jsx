@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef } from 'react'
 import { current, featured } from '../data/projects'
 import { Accented, LinkButton, Section, Tag } from './ui'
 
@@ -101,6 +102,17 @@ function ProjectCard({ project, index }) {
 }
 
 export default function Featured() {
+  // Width of the empty space between the window's left edge and the cards, kept up to date so
+  // each "Next" connector can sit exactly in the middle of it.
+  const listRef = useRef(null)
+  useLayoutEffect(() => {
+    const el = listRef.current
+    const update = () => el && el.style.setProperty('--gutter', `${el.getBoundingClientRect().left}px`)
+    update()
+    window.addEventListener('resize', update)
+    return () => window.removeEventListener('resize', update)
+  }, [])
+
   return (
     <Section
       id="projects"
@@ -108,18 +120,22 @@ export default function Featured() {
       eyebrow="Featured work"
       title="Projects"
       intro="From AI chatbots to delivery pipelines and computer vision on real hardware. Each one is documented and runnable from its repository."
+      innerClassName="mx-auto max-w-[60rem]"
     >
-      {/* Cards are centered and slightly narrower than the page, leaving room on the left for
-          each card's "Next" connector, which sits at the card's vertical middle. On screens
-          narrower than a laptop, the connector goes under the card instead. */}
-      <div className="mx-auto max-w-[60rem] space-y-10">
+      {/* The section is narrower than the page and centered, so the heading lines up with the
+          cards and there is room on the left for each card's "Next" connector: centered in that
+          space and at the card's vertical middle. Narrower screens show it under the card. */}
+      <div ref={listRef} className="space-y-10">
         {featured.map((p, i) => {
           // the last featured card leads to the project in progress
           const next = featured[i + 1] ?? { id: 'now', title: current.title, short: current.title, field: 'Currently building' }
           return (
             <div key={p.id} className="relative">
               <ProjectCard project={p} index={i} />
-              <div className="absolute right-full top-1/2 mr-5 hidden w-[7.5rem] -translate-y-1/2 xl:block">
+              <div
+                className="absolute top-1/2 hidden w-[7.5rem] -translate-y-1/2 xl:block"
+                style={{ left: 'calc(var(--gutter, 0px) / -2 - 3.75rem)' }}
+              >
                 <NextConnector next={next} />
               </div>
               <div className="mt-6 w-40 pl-6 xl:hidden">

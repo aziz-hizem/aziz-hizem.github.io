@@ -13,26 +13,28 @@ export function Accented({ text }) {
   )
 }
 
-export function Section({ id, number, eyebrow, title, intro, children }) {
+export function Section({ id, number, eyebrow, title, intro, children, innerClassName = '' }) {
   return (
     <section id={id} className="mx-auto w-full max-w-6xl px-5 py-24 sm:px-8">
-      <header className="reveal mb-12 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <div className="max-w-2xl">
-          <p className="label mb-3 flex items-center gap-3 text-accent">
-            {number && <span className="text-dim">{number}</span>}
-            {eyebrow}
-          </p>
-          <h2 className="text-4xl font-bold sm:text-5xl">
-            <Accented text={title} />
-          </h2>
-          {intro && (
-            <p className="mt-4 text-lg text-muted">
-              <Accented text={intro} />
+      <div className={innerClassName}>
+        <header className="reveal mb-12 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div className="max-w-2xl">
+            <p className="label mb-3 flex items-center gap-3 text-accent">
+              {number && <span className="text-dim">{number}</span>}
+              {eyebrow}
             </p>
-          )}
-        </div>
-      </header>
-      {children}
+            <h2 className="text-4xl font-bold sm:text-5xl">
+              <Accented text={title} />
+            </h2>
+            {intro && (
+              <p className="mt-4 text-lg text-muted">
+                <Accented text={intro} />
+              </p>
+            )}
+          </div>
+        </header>
+        {children}
+      </div>
     </section>
   )
 }

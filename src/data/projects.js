@@ -195,8 +195,12 @@ export const more = [
 ]
 
 // Shown in the first screen: each field with its projects; every name jumps to its card.
+// Each field lists its projects line by line; a line can hold several, shown comma-separated.
 export const projectMap = [
-  { group: 'Artificial Intelligence', items: [['F1 Chatbot', 'f1-chatbot'], ['Flappy Fish', 'flappy-fish-neat-ai'], ['Spotify Chatbot', 'spotify-chatbot']] },
-  { group: 'DevOps & Cloud', items: [['Azure Pipeline', 'azure-devops-cicd-pipeline'], ['Shakedown', 'now']] },
-  { group: 'Computing & Automation', items: [['SpiderBot', 'spiderbot-rust-detection'], ['Pill Classifier', 'pill-blister-classifier']] },
+  {
+    group: 'Artificial Intelligence & ML',
+    lines: [[['F1 Chatbot', 'f1-chatbot'], ['Flappy Fish ML', 'flappy-fish-neat-ai']], [['Spotify Chatbot', 'spotify-chatbot']]],
+  },
+  { group: 'DevOps & Cloud', lines: [[['Azure Pipeline', 'azure-devops-cicd-pipeline']], [['Shakedown', 'now']]] },
+  { group: 'Computing & Automation', lines: [[['SpiderBot', 'spiderbot-rust-detection']], [['Pill Classifier', 'pill-blister-classifier']]] },
 ]

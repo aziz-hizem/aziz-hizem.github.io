@@ -100,26 +100,31 @@ export default function Hero() {
               <span aria-hidden="true" className="absolute bottom-0.5 left-0 top-0.5 w-[3px] rounded-full bg-accent/60" />
               <p className="inline-block rounded-full bg-accent-soft px-3 py-1 text-sm font-semibold text-accent">{g.group}</p>
               <ul className="mt-2 space-y-1">
-                {g.items.map(([name, id]) => (
-                  <li key={id}>
-                    <a
-                      href={`#${id}`}
-                      className="group inline-flex items-center gap-1.5 text-[15px] text-ink/85 transition-colors hover:text-ink"
-                    >
-                      {name}
-                      <svg
-                        width="13"
-                        height="13"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.4"
-                        aria-hidden="true"
-                        className="text-dim transition-all duration-300 group-hover:translate-y-0.5 group-hover:text-accent"
-                      >
-                        <path d="M12 5v14m0 0-6-6m6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </a>
+                {g.lines.map((line) => (
+                  <li key={line[0][1]} className="flex flex-wrap items-center">
+                    {line.map(([name, id], k) => (
+                      <span key={id} className="inline-flex items-center">
+                        {k > 0 && <span className="-ml-0.5 mr-2 text-dim">,</span>}
+                        <a
+                          href={`#${id}`}
+                          className="group inline-flex items-center gap-1.5 text-[15px] text-ink/85 transition-colors hover:text-ink"
+                        >
+                          {name}
+                          <svg
+                            width="13"
+                            height="13"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.4"
+                            aria-hidden="true"
+                            className="text-dim transition-all duration-300 group-hover:translate-y-0.5 group-hover:text-accent"
+                          >
+                            <path d="M12 5v14m0 0-6-6m6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </a>
+                      </span>
+                    ))}
                   </li>
                 ))}
               </ul>
